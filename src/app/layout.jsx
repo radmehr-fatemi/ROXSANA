@@ -2,6 +2,10 @@ import { yekan } from '@/utils/fonts';
 
 //Style
 import '@/app/globals.scss';
+import "animate.css";
+
+//Component
+import Layout from '@/components/layout/Layout';
 
 //Metadata
 export const metadata = {
@@ -11,8 +15,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa" dir='rtl'>
-      <body className={yekan.className}>{children}</body>
+    <html lang="en">
+      <body className={yekan.className}>
+
+        <Layout>
+          {children}
+        </Layout>
+
+      </body>
     </html>
   )
 }

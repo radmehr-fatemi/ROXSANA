@@ -1,9 +1,8 @@
+//Component
+import HomePage from "@/components/template/home/HomePage";
+
 const Home = () => {
-  return (
-    <div>
-<h1> سلام </h1>      
-    </div>
-  );
+  return <HomePage />
 };
 
 export default Home;

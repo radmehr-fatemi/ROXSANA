@@ -1,0 +1,16 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    @include max();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $linear-blue;
+    margin-bottom: 4.4rem;
+    padding: .2rem;
+    
+    a {
+        color: #fff;
+    }
+}

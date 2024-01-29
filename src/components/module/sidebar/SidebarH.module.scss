@@ -1,0 +1,39 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    position: relative;
+}
+
+.list {
+    position: absolute;
+    top: 2.4rem;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgb(59, 59, 126);
+    border-radius: 6px;
+    padding: 1rem;
+    background: linear-gradient(to top right, rgba(0, 153, 255, 0.854), rgba(0, 42, 255, 0.785));
+    z-index: 10;
+    
+    a {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        color: #fff;
+        font-size: 1.4rem;
+        animation: Show .3s;
+        filter: drop-shadow(0 0 4px #002943);
+    }
+
+    svg {
+        margin-right: 3px;
+        font-size: 1.6rem;
+    }
+}
+
+//---------------------------
+@keyframes Show {
+    0% {
+        transform: translateX(-100%);
+    }
+}

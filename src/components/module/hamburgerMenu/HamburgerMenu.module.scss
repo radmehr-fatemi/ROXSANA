@@ -1,0 +1,47 @@
+@import "../../../../public/style/res.scss";
+
+//------HamburgerMenu-------
+.hamburgerMenu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    div {
+        width: 100%;
+        height: 3px;
+        margin: 2px 0;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+}
+
+.hamburgerMenuTrue {
+    overflow: hidden;
+
+    div {
+        transform-origin: 19%;
+    }
+
+    div:nth-child(1) {
+        rotate: 45deg;
+    }
+
+    div:nth-child(2) {
+        transform: translateX(-150%);
+    }
+
+    div:nth-child(3) {
+        rotate: -45deg;
+    }
+}
+
+//-------------MD----------------
+@include md {
+    .hamburgerMenu {
+        display: none;
+    }
+}
