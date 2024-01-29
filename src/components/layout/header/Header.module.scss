@@ -1,23 +1,146 @@
 @import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
 
 .container {
+    @include max;
     position: sticky;
     top: 4px;
     width: 90vw;
     border-radius: 40px;
     background: $linear-blue;
     backdrop-filter: blur(2px);
-    margin: auto;
     padding: .5rem 1rem;
+    color: #fff;
+    margin-bottom: .4rem;
+}
+
+.field1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
-    margin-bottom: .4rem;
-    
+
     a {
         filter: drop-shadow(0 0 1px #002176);
         color: #fff;
         font-size: 1.8rem;
     }
+
+}
+
+.field2 {
+    display: none;
+    padding: 1rem;
+
+    a {
+        color: #fff;
+    }
+}
+
+.field2_f1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.field2_f1_left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 a {
+        font-size: 3rem;
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: .2rem;
+    border-radius: 10px;
+    color: rgb(48, 48, 255);
+    margin-left: 1rem;
+
+    @include lg {
+    margin-left: 2.2rem;
+    width: 500px;
+    }
+
+    svg {
+        margin-right: 4px;
+        font-size: 2rem;
+        cursor: pointer;
+        animation: Show1 2s;
+    }
+
+    input {
+        &::placeholder {
+            color: #7990cb;
+        }
+    }
+}
+
+.field2_f1_right {
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+        margin-left: 1.2rem;
+
+        &:hover {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.field2_f2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 20px;
+    width: 220px;
+    
+    @include lg {
+        width: 300px;
+    }
+
+    a {
+        display: flex;
+        width: 80px;
+
+        &:hover {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+//-----------Animate-----------
+@keyframes Show1 {
+    0% {
+        transform: rotate(90deg);
+    }
+    
+}
+
+// -----------------MD-----------------
+@include md {
+    .container {
+    margin-bottom: 1rem;
+    }
+    
+    .field1 {
+        display: none;
+    }
+
+    .field2 {
+        display: block;
+    }
+
 }

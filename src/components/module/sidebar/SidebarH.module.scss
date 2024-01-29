@@ -7,14 +7,14 @@
 
 .list {
     position: absolute;
-    top: 2.4rem;
+    top: 3rem;
     overflow: hidden;
     box-shadow: 0 0 6px rgb(59, 59, 126);
     border-radius: 6px;
     padding: 1rem;
     background: linear-gradient(to top right, rgba(0, 153, 255, 0.854), rgba(0, 42, 255, 0.785));
     z-index: 10;
-    
+
     a {
         display: flex;
         justify-content: start;
