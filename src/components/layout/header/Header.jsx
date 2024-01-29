@@ -71,7 +71,7 @@ const Header = () => {
                     ><Link href="/categories" > Categories </Link></li>
                     <li
                         style={{ animation: "zoomIn .4s .8s" }}
-                    ><Link href="/dashboard" > Account </Link></li>
+                    ><Link href="/dashboard" > About us </Link></li>
                 </ul>
             </div>
         </div>

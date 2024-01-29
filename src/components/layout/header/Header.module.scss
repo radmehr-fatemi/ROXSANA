@@ -108,12 +108,18 @@
     width: 220px;
     
     @include lg {
-        width: 300px;
+        width: 280px;
     }
 
     a {
         display: flex;
         width: 80px;
+
+        &:nth-child(1) {
+            svg {
+                margin-right: 3px;
+            }
+        }
 
         &:hover {
             font-size: 1.1rem;
