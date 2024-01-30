@@ -1,7 +1,11 @@
-const HomePage = ({ productsData ,categoriesData }) => {
-    console.log(categoriesData)
+//Component
+import SliderCircle from "@/components/module/slider-circle/SliderCircle";
+
+const HomePage = ({ productsData, categoriesData }) => {
+
     return (
         <div>
+            <SliderCircle data={categoriesData} />
 
         </div>
     );

@@ -1,0 +1,52 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.sliderCircle_container {
+    padding: 1rem 0 1rem 1.6rem;    
+    height: 19vh;
+    
+    @include md {
+        height: 22vh;
+    }
+    
+}
+
+.sliderCircle {
+height: 100%;
+}
+    
+.sliderCircle_card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 4px solid $blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    &:hover {
+
+        img {
+            transform: scale(1.2);
+        }
+    }
+    
+    p {
+        position: absolute;
+        bottom: -2rem;
+        width: 140px;
+        text-align: center;
+        color: rgb(0, 0, 81);
+        font-weight: 600;
+    }
+
+    img {
+        height: 60px;
+        border-radius: 50%;
+
+        @include md {
+            height: 80px;
+        }
+    }
+}
