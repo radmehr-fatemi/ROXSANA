@@ -1,0 +1,77 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.banner_container {
+    @include max;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    @include md {
+        padding: 0;
+    }
+
+    img {
+        height: 200px;
+
+        @include md {
+            height: 300px;
+        }
+    }
+
+    .swiper {
+        border-radius: 10px;
+        box-shadow: 0 0 4px #89a7e3;
+
+        @include md {
+            border-radius: 0;
+        }
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        width: auto !important;
+        left: auto !important;
+        margin: 0;
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+    }
+
+    .swiper-pagination-bullet {
+        padding: 5px 10px;
+        border-radius: 10px;
+        width: 4px;
+        height: 6px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 12px;
+        opacity: 1;
+        background: #fff;
+        box-shadow: 0 0 4px #528bd1 inset;
+    }
+
+    .swiper-pagination-bullet-active {
+        color: #fff;
+        background: rgb(17, 137, 236);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+        background-color: #13509a;
+        background: linear-gradient(to top right ,rgb(68, 196, 255) ,rgb(0, 0, 106));
+        right: 10px !important;
+        padding: 1.6rem;
+        color: #fff !important;
+        fill: black !important;
+        stroke: black !important;
+        border-radius: 50%;
+        // box-shadow: 0 0 8px #133257 ;
+        height: 5px !important;
+
+        @include md {
+            display: flex;
+        }
+    }
+}

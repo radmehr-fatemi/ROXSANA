@@ -15,7 +15,8 @@ import Link from 'next/link';
 
 export default function SliderCircle({ data }) {
     return (
-        <div className='sliderCircle_container'>
+        <div 
+        className='sliderCircle_container'>
             <Swiper
                 slidesPerView={3.5}
                 spaceBetween={10}
@@ -28,12 +29,12 @@ export default function SliderCircle({ data }) {
                         spaceBetween: 20,
                     },
                     768: {
-                        slidesPerView: 5.5,
+                        slidesPerView: 6.5,
                         spaceBetween: 40,
                     },
                     1024: {
-                        slidesPerView: 6.5,
-                        spaceBetween: 50,
+                        slidesPerView: 9.5,
+                        spaceBetween: 40,
                     },
                 }}
                 modules={[Pagination]}
@@ -48,7 +49,7 @@ export default function SliderCircle({ data }) {
                             <Link
                                 href={`/products/category/${i}`}
                                 className='sliderCircle_card' >
-                                <Image src={`/images/cards/${i}.png`} width={600} height={400} />
+                                <Image src={`/images/cards/${i}.png`} width={600} height={400} alt={`${i} photo`} />
                                 <p> {i} </p>
                             </Link>
                         </SwiperSlide>
