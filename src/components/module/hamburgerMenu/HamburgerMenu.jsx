@@ -1,3 +1,5 @@
+"use client"
+
 //Style
 import styles from "./HamburgerMenu.module.scss";
 
