@@ -14,11 +14,12 @@ import './SliderSpecial.scss';
 import CardHome from '@/module/card-home/CardHome';
 import SmallSpinner from '@/module/spinner/small-spinner/SmallSpinner';
 
-export default function SliderSpecial() {
+export default function SliderSpecial({productsData}) {
 
     const [data, setData] = useState([]);
 
     useEffect(() => {
+        if (!data.length) return setData(productsData) 
         const fetchData = async () => {
             const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products`);
             setData(data.products)

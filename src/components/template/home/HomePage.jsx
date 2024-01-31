@@ -4,12 +4,11 @@ import Banner from "@/module/banner/Banner";
 import SliderCircle from "@/module/slider-circle/SliderCircle";
 
 const HomePage = ({ productsData, categoriesData }) => {
-
     return (
         <div>
-           <SliderCircle data={JSON.parse(JSON.stringify(categoriesData))} />
+           <SliderCircle categoriesData={categoriesData} />
             <Banner />
-            <SliderSpecial data={JSON.parse(JSON.stringify(productsData))} />
+            <SliderSpecial productsData={productsData} />
         </div>
     );
 };
