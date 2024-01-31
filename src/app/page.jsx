@@ -1,8 +1,8 @@
 import axios from "axios";
 
 //Component
-import HomePage from "@/components/template/home/HomePage";
-import FullSpinner from "@/components/module/spinner/full-spinner/FullSpinner";
+import HomePage from "@/template/home/HomePage";
+import FullSpinner from "@/module/spinner/full-spinner/FullSpinner";
 
 const Home = async () => {
 

@@ -1,0 +1,44 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.sliderSpecial_container {
+    padding: 2rem 0;
+    background: url("../../../../public/images/bg/bg1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: brightness(.8);
+    position: relative;
+
+    @include md {
+        margin: 1rem;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 2px 2px 12px #4d5a77;
+        padding: 2rem .2rem;
+    }
+
+    .SliderSpecial {
+    }
+
+    
+    .special_products {
+        position: absolute;
+        left: 1rem;
+        top: 4rem;
+        color: #fff;
+        width: 80px;
+        font-size: 1.8rem;
+        text-shadow: 0 0 10px rgb(0, 0, 55);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 700;
+    }
+
+    .swiper {
+        padding-left: 8.4rem;
+    }
+    
+    .swiper-slide {
+        box-shadow: 0 0 4pc #5479c9;
+    }
+}

@@ -1,6 +1,7 @@
 //Component
-import Banner from "@/components/module/banner/Banner";
-import SliderCircle from "@/components/module/slider-circle/SliderCircle";
+import SliderSpecial from "@/module/slider-special/SliderSpecial";
+import Banner from "@/module/banner/Banner";
+import SliderCircle from "@/module/slider-circle/SliderCircle";
 
 const HomePage = ({ productsData, categoriesData }) => {
 
@@ -8,7 +9,7 @@ const HomePage = ({ productsData, categoriesData }) => {
         <div>
             <SliderCircle data={categoriesData} />
             <Banner />
-
+            <SliderSpecial data={productsData} />
         </div>
     );
 };

@@ -5,7 +5,7 @@ import '@/app/globals.scss';
 import "animate.css";
 
 //Component
-import Layout from '@/components/layout/Layout';
+import Layout from '@/layout/Layout';
 
 //Metadata
 export const metadata = {

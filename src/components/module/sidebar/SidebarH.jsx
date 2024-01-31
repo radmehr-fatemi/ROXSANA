@@ -11,7 +11,7 @@ import styles from "./SidebarH.module.scss";
 import { icons } from "@/constants/icons";
 
 //Component
-import HamburgerMenu from "../hamburgerMenu/HamburgerMenu";
+import HamburgerMenu from "@/module/hamburgerMenu/HamburgerMenu";
 
 const SidebarH = () => {
 

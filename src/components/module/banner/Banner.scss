@@ -5,6 +5,7 @@
     @include max;
     margin-bottom: 1rem;
     padding: 1rem;
+    min-height: 200px;
 
     @include md {
         padding: 0;
@@ -59,15 +60,15 @@
     .swiper-button-next,
     .swiper-button-prev {
         display: none;
-        background-color: #13509a;
-        background: linear-gradient(to top right ,rgb(68, 196, 255) ,rgb(0, 0, 106));
+        backdrop-filter: blur(2px);
+        box-shadow: 0 0 8px #1e4b83 ;
+        background: linear-gradient(to top right ,rgba(68, 196, 255, 0.251) ,rgba(0, 0, 106, 0.329));
         right: 10px !important;
         padding: 1.6rem;
         color: #fff !important;
         fill: black !important;
         stroke: black !important;
         border-radius: 50%;
-        // box-shadow: 0 0 8px #133257 ;
         height: 5px !important;
 
         @include md {
