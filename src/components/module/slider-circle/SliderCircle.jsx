@@ -23,6 +23,7 @@ export default function SliderCircle() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
+        if (data.length) return 
         const fetchData = async () => {
             const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products/categories`);
             setData(data)
