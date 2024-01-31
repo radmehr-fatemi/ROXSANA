@@ -5,10 +5,11 @@ const HamburgerMenu = ({ clicked, clickHandler }) => {
     return <div
         className={`${styles.hamburgerMenu} ${clicked && styles.hamburgerMenuTrue}`}
         onClick={clickHandler}
+        on
     >
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className={ styles.div1 }></div>
+        <div className={ styles.div2 }></div>
+        <div className={ styles.div3 }></div>
     </div>
 }
 

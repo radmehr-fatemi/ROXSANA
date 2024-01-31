@@ -7,9 +7,9 @@ const HomePage = ({ productsData, categoriesData }) => {
 
     return (
         <div>
-            <SliderCircle data={categoriesData} />
+           <SliderCircle data={JSON.parse(JSON.stringify(categoriesData))} />
             <Banner />
-            <SliderSpecial data={productsData} />
+            <SliderSpecial data={JSON.parse(JSON.stringify(productsData))} />
         </div>
     );
 };

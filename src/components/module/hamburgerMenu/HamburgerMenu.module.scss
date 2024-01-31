@@ -27,15 +27,15 @@
         transform-origin: 19%;
     }
 
-    div:nth-child(1) {
+    .div1 {
         rotate: 45deg;
     }
 
-    div:nth-child(2) {
+    .div2 {
         transform: translateX(-150%);
     }
 
-    div:nth-child(3) {
+    .div3 {
         rotate: -45deg;
     }
 }
