@@ -32,7 +32,7 @@ export default function SliderCircle() {
     }, [])
 
     if (!data.length) return (
-        <div className='w-screen h-20' >
+        <div className='w-screen h-28' >
             <SmallSpinner />
         </div>
     )
