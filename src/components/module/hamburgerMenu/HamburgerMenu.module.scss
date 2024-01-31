@@ -20,7 +20,7 @@
     }
 }
 
-#hamburgerMenuTrue {
+.hamburgerMenuTrue {
     overflow: hidden;
 
     div {
@@ -28,7 +28,7 @@
     }
 
     .div1 {
-        rotate: 45deg;
+        transform: rotate(45deg);
     }
 
     .div2 {
@@ -36,7 +36,7 @@
     }
 
     .div3 {
-        rotate: -45deg;
+        transform: rotate(-45deg);
     }
 }
 
