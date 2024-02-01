@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./CardHome.module.scss";
 
 //function
-import { shortHandler } from "@/utils/functions";
+import { discountCounter, shortHandler } from "@/utils/functions";
 
 const CardHome = ({ data }) => {
 
@@ -19,10 +19,10 @@ const CardHome = ({ data }) => {
                 </div>
 
                 <div className={styles.field}>
-                    <h3> { shortHandler(title ,18) } </h3>
+                    <h3> { shortHandler(title ,14) } </h3>
 
                     <div className={styles.prices}>
-                        <p> {price} $ </p>
+                        <p> { discountCounter( price ,dis ) } $ </p>
                         <span> {price} $ </span>
                     </div>
 

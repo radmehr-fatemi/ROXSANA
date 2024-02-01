@@ -29,7 +29,7 @@ export default function SliderCircle({ categoriesData }) {
             setData(data)
         }
         fetchData()
-    }, [])
+    }, [data])
 
     if (!data.length) return (
         <div className='w-screen h-28' >
