@@ -26,7 +26,7 @@ const SliderMain = ({ children, data }) => {
                 <motion.h2
                     initial={{ x: -60, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: .4 }}
+                    transition={{ duration: .1 }}
                     viewport={{ once: true }}
                 >
                     {children}
@@ -71,8 +71,9 @@ const SliderMain = ({ children, data }) => {
                         data.map((i, index) => (
                             <SwiperSlide key={i.id}>
                                 <motion.div
-                                    initial={{ x: 20, opacity: 0 }}
+                                    initial={{ x: 60, opacity: 0 }}
                                     whileInView={{ x: 0, opacity: 1 }}
+                                    transition={{ duration: .1 }}
                                     viewport={{ once: true }}
                                 >
                                     <CardHome data={i} index={index} />

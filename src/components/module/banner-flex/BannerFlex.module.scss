@@ -17,7 +17,8 @@
     }
 
     a {
-        width: 100%;
+        width: fit-content;
+        height: fit-content;
     }
 }
 
@@ -33,7 +34,7 @@
 }
 
 .field1 {
-    a:nth-child(1) img {
+    .image1 {
         height: 200px;
 
         @include md {
@@ -42,22 +43,22 @@
         }
     }
 
-    a:nth-child(2) img {
+    .image2 {
         height: 400px;
 
         @include md {
-            height: 610px;
+            height: 620px;
         }
     }
 
     @include md {
         align-items: end;
-        transform: translateX(25%);
+        transform: translateX(22%);
     }
 }
 
 .field2 {
-    a:nth-child(2) img {
+    .image4 {
         height: 200px;
         
         @include md {
@@ -65,16 +66,16 @@
         }
     }
 
-    a:nth-child(1) img {
+    .image3 {
         height: 400px;
 
         @include md {
-            height: 610px;
+            height: 620px;
         }
     }
 
     @include md {
         justify-content: start;
-        transform: translateX(-25%);
+        transform: translateX(-22%);
     }
 }

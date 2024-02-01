@@ -2,15 +2,12 @@
 @import "../../../../public/style/res.scss";
 
 .container {
-    padding: 1rem;
+    padding: 2rem 1rem;
     padding-bottom: 5rem;
-    background-color: rgb(39, 129, 255);
-    background: linear-gradient(45deg, rgb(0, 166, 255), rgb(0, 89, 255), rgb(0, 132, 255));
-    color: #fff;
-    text-shadow: 0 2px 4px #364658;
+    background-color: #fff;
     
     a {
-        color: #fff;
+        // color: #fff;
     }
 }
 
@@ -25,7 +22,7 @@
         display: flex;
         padding: .2rem .4rem 0 .4rem;
         border-radius: 10px;
-        border: 2px solid #fff;
+        border: 2px solid ;
 
         svg {
             font-size: 1.2rem;
@@ -45,7 +42,7 @@
 }
 
 .field2 {
-    border: 1px solid #fff;
+    border: 1px solid ;
     padding: .4rem;
     border-radius: 6px;
 
@@ -63,7 +60,6 @@
     svg {
         font-size: 1.6rem;
         margin: 0 1rem;
-        filter: drop-shadow(0 0 4px #6585a9);
     }
 }
 
@@ -76,7 +72,7 @@
 }
 
 .field4 {
-    border: 1px solid #fff;
+    border: 1px solid ;
     border-radius: 6px;
     padding:.4rem;
     margin: .4rem 0;
@@ -92,7 +88,8 @@
     .container {
         padding: 2rem;
         padding-bottom: 0;
-    }
+    box-shadow: 0 0 8px #c9d3ea;
+}
 
     .field1 {
     }
@@ -133,6 +130,6 @@
 
     .field4 {
         border: none;
-        border-top: 1px solid #fff;
+        border-top: 1px solid ;
     }
 }

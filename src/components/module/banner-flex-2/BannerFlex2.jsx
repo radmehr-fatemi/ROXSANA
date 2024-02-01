@@ -13,7 +13,7 @@ const BannerFlex2 = () => {
             <Link href="/products/category/mens-watches">
                 <motion.div
                     initial={{ opacity: 0, x: -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    whileInView={{ opacity: [0 ,1 ,.5 ,1], x: 0 }}
                     viewport={{ once: true }}
                 >
                     <Image src="/images/banner-flex-2/watch1.jpg" width={600} height={400} alt="banner photo" />
@@ -23,7 +23,7 @@ const BannerFlex2 = () => {
             <Link href="/products/category/womens-watches">
                 <motion.div
                     initial={{ opacity: 0, x: 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    whileInView={{ opacity: [0 ,1 ,.5 ,1], x: 0 }}
                     viewport={{ once: true }}
                 >
                     <Image src="/images/banner-flex-2/watch2.jpg" width={600} height={400} alt="banner photo" />
