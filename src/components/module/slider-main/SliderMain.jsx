@@ -34,7 +34,7 @@ const SliderMain = ({ children, data }) => {
             </div>
 
             <Swiper
-                slidesPerView={2.2}
+                slidesPerView={1.8}
                 spaceBetween={10}
                 breakpoints={{
                     768: {
@@ -52,10 +52,10 @@ const SliderMain = ({ children, data }) => {
                         slidesPerView: 6,
                         spaceBetween: 40,
                     },
-                    1440: {
-                        slidesPerView: 7,
-                        spaceBetween: 40,
-                    },
+                    // 1440: {
+                    //     slidesPerView: 7,
+                    //     spaceBetween: 40,
+                    // },
                 }}
 
                 modules={[Pagination]}

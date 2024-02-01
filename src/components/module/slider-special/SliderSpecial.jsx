@@ -32,7 +32,7 @@ export default function SliderSpecial({productsData}) {
             style={{ animation: "fadeIn .4s" }}
             className='sliderSpecial_container'>
             <Swiper
-                slidesPerView={1.4}
+                slidesPerView={1.1}
                 spaceBetween={10}
                 // centeredSlides={true}
                 // pagination={{
@@ -54,10 +54,10 @@ export default function SliderSpecial({productsData}) {
                         slidesPerView: 6,
                         spaceBetween: 40,
                     },
-                    1440: {
-                        slidesPerView: 7,
-                        spaceBetween: 40,
-                    },
+                    // 1440: {
+                    //     slidesPerView: 6,
+                    //     spaceBetween: 40,
+                    // },
                 }}
 
                 modules={[Pagination]}

@@ -1,0 +1,24 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+
+    img {
+        border-radius: 20px;
+        margin: .8rem 0;
+        box-shadow: 0 4px 12px #444171;
+        filter: grayscale(.3);
+    }
+
+    @include md {
+        display: flex;
+        justify-content: center;
+
+        img {
+            margin: 0 1rem;
+        }
+    }
+}

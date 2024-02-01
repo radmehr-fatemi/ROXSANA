@@ -19,7 +19,7 @@ const CardHome = ({ data }) => {
                 </div>
 
                 <div className={styles.field}>
-                    <h3> { shortHandler(title ,12) } </h3>
+                    <h3> { shortHandler(title ,18) } </h3>
 
                     <div className={styles.prices}>
                         <p> {price} $ </p>
