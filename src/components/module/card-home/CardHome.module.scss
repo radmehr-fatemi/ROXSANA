@@ -6,8 +6,9 @@
     height: 240px;
     overflow: hidden;
     border-radius: 6px;
-    box-shadow: 0 0 4px rgb(119, 119, 165);
-    background: linear-gradient(to right top, rgb(219, 240, 255), rgb(102, 102, 150));
+    // background: linear-gradient(to right top, rgb(219, 240, 255), rgb(102, 102, 150));
+    background-color: #fff;
+    box-shadow: 0 0 6px rgb(196, 196, 220);
     padding: .6rem;
     position: relative;
 
@@ -28,12 +29,14 @@
     height: 60%;
     border-radius: 6px;
     border-top-left-radius: 50%;
+    // border: 2px solid blue;
+    box-shadow: 0 0 8px rgb(119, 119, 165);
 
     img {
         width: 100%;
         height: 100%;
         transform: scale(1.2);
-    }
+}
 
 }
 

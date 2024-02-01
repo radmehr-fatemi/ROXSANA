@@ -3,7 +3,9 @@
 
 .sliderSpecial_container {
     width: 100%;
-    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    // padding: 2rem 0;
     background: url("../../../../public/images/bg/bg1.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -19,7 +21,8 @@
         padding: 2rem .2rem;
     }
 
-    .SliderSpecial {
+    .sliderSpecial {
+        padding: 2rem;
     }
 
     
@@ -40,6 +43,5 @@
     }
     
     .swiper-slide {
-        box-shadow: 0 0 4pc #5479c9;
     }
 }
