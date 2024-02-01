@@ -1,0 +1,23 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.sliderMain_container {
+    width: 100%;
+    padding:1rem;
+    padding-right: 0;
+}
+
+.sliderMain_h2 {
+
+    h2 {
+        background: linear-gradient(to left , rgb(0, 81, 255) ,rgb(30, 30, 157) ,rgb(71, 145, 255));
+        width: fit-content;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: .4rem 4rem;
+        color: #fff;
+        margin-bottom: .6rem;
+    }
+}
+
+.sliderMain {}

@@ -16,7 +16,7 @@ const Home = async () => {
     
   } catch (err) {
     console.log("Error in get data" ,err)
-    return <FullSpinner />  
+    return <HomePage productsData={[]} categoriesData={[]} />
   }
 };
 

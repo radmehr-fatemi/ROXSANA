@@ -1,0 +1,6 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    @include max;
+}

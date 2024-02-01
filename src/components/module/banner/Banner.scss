@@ -2,7 +2,7 @@
 @import "../../../../public/style/res.scss";
 
 .banner_container {
-    @include max;
+    width: 100%;
     margin-bottom: 1rem;
     padding: 1rem;
     min-height: 200px;
