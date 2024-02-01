@@ -18,12 +18,12 @@ import { shortHandler } from "@/utils/functions";
 //Component
 import SmallSpinner from '@/module/spinner/small-spinner/SmallSpinner';
 
-export default function SliderCircle({categoriesData}) {
+export default function SliderCircle({ categoriesData }) {
 
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        if (!data.length) return setData(categoriesData) 
+        if (!data.length) return setData(categoriesData)
         const fetchData = async () => {
             const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products/categories`);
             setData(data)
@@ -39,6 +39,7 @@ export default function SliderCircle({categoriesData}) {
 
     return (
         <div
+            id='sliderCircle_container'
             className='sliderCircle_container'>
             <Swiper
                 slidesPerView={3.5}
