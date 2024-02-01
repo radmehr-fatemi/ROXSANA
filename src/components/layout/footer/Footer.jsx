@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
             <div className={styles.field3}>
                 <h4> ROXANA online store </h4>
-                <p> With the symbol of confidence from the Ministry of Mining Industry and Trade, he entered the field of online sales, relying on more than a decade. Providing quality and cost-effective products, customer satisfaction by paying attention to the customer's voice, ease of purchase and providing various products based on fashion and even ahead of fashion are and will be Roxana's primary principles and goals. We always try to deliver the purchased products to our dear customers in the shortest possible time with the lowest error rate and by using modern methods of order registration, shipping and packaging, and we step on this path day by day with innovation.</p>
+                <p> With the symbol of confidence from the Ministry of Mining Industry and Trade, he entered the field of online sales, relying on more than a decade. Providing quality and cost-effective products, customer satisfaction by paying attention to the customer`s voice, ease of purchase and providing various products based on fashion and even ahead of fashion are and will be Roxana`s primary principles and goals. We always try to deliver the purchased products to our dear customers in the shortest possible time with the lowest error rate and by using modern methods of order registration, shipping and packaging, and we step on this path day by day with innovation.</p>
             </div>
             <div className={styles.field4}>
                 <span> All rights of this site belong to Roxana online sellers </span>
