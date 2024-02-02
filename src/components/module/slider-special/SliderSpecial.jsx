@@ -3,6 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import useSWR from 'swr';
+import axios from 'axios';
 
 //styles
 import 'swiper/css';
@@ -15,9 +16,7 @@ import SmallSpinner from '@/module/spinner/small-spinner/SmallSpinner';
 
 export default function SliderSpecial({ productsData }) {
 
-    const { data, isLoading} = useSWR(`${process.env.NEXT_PUBLIC_BASE_URL}/${endpoint}/${id}`, (url) => (
-        axios.get(url).then(res => res.data))
-    )
+    const { data ,isLoading }  = useSWR(`${process.env.NEXT_PUBLIC_BASE_URL}/products`, (url) => axios.get(url).then(res => res.data))
 
     return (
         <div
@@ -62,7 +61,7 @@ export default function SliderSpecial({ productsData }) {
                             <SmallSpinner />
                         </div>
                     ) :
-                        data.map((i, index) => (
+                        data.products.map((i, index) => (
                             <SwiperSlide
                                 style={{ animation: `fadeInRight .4s .${index + 2}s` }}
                                 key={i.id}>
