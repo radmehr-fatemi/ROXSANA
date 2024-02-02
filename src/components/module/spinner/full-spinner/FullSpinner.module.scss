@@ -1,8 +1,9 @@
-$blue:#05004f;
+$blue: #05004f;
+$red: #2b0000;
 
 .container {
     width: 100vw;
-    height: calc( 100vh - 4em );
+    height: calc(100vh - 4em);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +16,7 @@ $blue:#05004f;
     align-items: center;
     justify-content: center;
     background-color: $blue;
-    border-radius: 50% ;
+    border-radius: 50%;
     position: relative;
 }
 
@@ -28,6 +29,7 @@ $blue:#05004f;
     justify-content: center;
     border-radius: 50% 50% 50% 45%;
     animation: Rotate2 2s infinite;
+    overflow: hidden;
 
     h1 {
         color: #fff;
@@ -36,7 +38,7 @@ $blue:#05004f;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50% ;
+        border-radius: 50%;
         animation: Rotate1 2s infinite;
         background-color: $blue;
     }
@@ -52,6 +54,24 @@ $blue:#05004f;
     filter: blur(1px);
 }
 
+//-----------containerError-----------
+.containerError {
+    @extend.container;
+
+    .field {
+        background-color: $red;
+    }
+
+    .loader {
+        background-color: rgb(255, 53, 53);
+
+        h1 {
+            background-color: $red;
+        }
+    }
+}
+
+//-------------keyframes---------------
 @keyframes Rotate1 {
     100% {
         transform: rotate(360deg);

@@ -6,6 +6,7 @@ import "animate.css";
 
 //Component
 import Layout from '@/layout/Layout';
+import ReduxProvider from '@/provider/ReduxProvider';
 
 //Metadata
 export const metadata = {
@@ -17,11 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={yekan.className}>
-
-        <Layout>
-          {children}
-        </Layout>
-
+        <ReduxProvider>
+          <Layout> {children} </Layout>
+        </ReduxProvider>
       </body>
     </html>
   )

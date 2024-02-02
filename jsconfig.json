@@ -5,13 +5,15 @@
       "@/public/*": ["./src/public/*"],
       "@/model/*": ["./src/model/*"],
       "@/utils/*": ["./src/utils/*"],
+      "@/redux/*": ["./src/redux/*"],
+      "@/server/*": ["./src/server/*"],
       "@/app/*": ["./src/app/*"],
       "@/api/*": ["./src/app/api/*"],
       "@/template/*": ["./src/components/template/*"],
       "@/module/*": ["./src/components/module/*"],
       "@/element/*": ["./src/components/element/*"],
       "@/layout/*": ["./src/components/layout/*"],
-      "@/provider/*": ["./src/components/provider/*"],
+      "@/provider/*": ["./src/provider/*"],
     }
   }
 }

@@ -71,7 +71,7 @@ const SliderMain = ({ children, data }) => {
                         data.map((i, index) => (
                             <SwiperSlide key={i.id}>
                                 <motion.div
-                                    initial={{ opacity: 0 ,x:10 }}
+                                    initial={{ opacity: 0 ,x:6 }}
                                     whileInView={{ opacity: 1 ,x:0 }}
                                     transition={ index <= 6 ? { duration: .4 + (index / 20) } : { duration: .0 } }
                                     viewport={{ once: true }}

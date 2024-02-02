@@ -2,8 +2,6 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 //styles
 import 'swiper/css';
@@ -14,21 +12,13 @@ import './SliderSpecial.scss';
 import CardHome from '@/module/card-home/CardHome';
 import SmallSpinner from '@/module/spinner/small-spinner/SmallSpinner';
 
+//SWR
+import {swrGet} from '@/server/swr';
+
 export default function SliderSpecial({ productsData }) {
 
-    const [data, setData] = useState([]);
 
-    useEffect(() => {
-        if (!data.length) {
-            return setData(productsData)
-        }
-
-        const fetchData = async () => {
-            const data = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products`);
-            setData(data?.data?.products)
-        }
-        fetchData()
-    }, [])
+    const { data, isLoading } = swrGet("products");
 
     return (
         <div
@@ -68,12 +58,12 @@ export default function SliderSpecial({ productsData }) {
             >
 
                 {
-                    !data.length ? (
-                        <div className=' h-56' >
+                    isLoading ? (
+                        <div className=' h-56 pb-20' >
                             <SmallSpinner />
                         </div>
                     ) :
-                        data.map((i, index) => (
+                        productsData.map((i, index) => (
                             <SwiperSlide
                                 style={{ animation: `fadeInRight .4s .${index + 2}s` }}
                                 key={i.id}>

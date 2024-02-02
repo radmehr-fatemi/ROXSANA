@@ -1,15 +1,15 @@
 //Style 
 import styles from "./FullSpinner.module.scss";
 
-const FullSpinner = () => {
+const FullSpinner = ({ error }) => {
     return (
         <div
             style={{ animation: "zoomIn .2s" }}
-            className={styles.container}>
-                
+            className={error ? styles.containerError : styles.container}>
+
             <div className={styles.field}>
                 <div className={styles.loader}>
-                    <h1> Loading.. </h1>
+                    <h1>  {error ? "Is a problem" : "Loading.." } </h1>
                 </div>
 
                 <span
