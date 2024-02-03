@@ -6,9 +6,7 @@ import FullSpinner from "@/components/module/spinner/full-spinner/FullSpinner";
 
 const Details = async ({ params: { productId } }) => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products/${productId}`, {
-            next: { revalidate: 1 * (60 * 60 * 24) }
-        });
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products/${productId}`);
         const data = await res.json();
 
         if (!data.id) return <FullSpinner />
@@ -23,9 +21,10 @@ const Details = async ({ params: { productId } }) => {
 
 export default Details;
 
-export const generateStaticParams = async (props) => {
+export const generateStaticParams = async () => {
     const productsData = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products`);
-    const paths = productsData.data.products.map(i => { productId: String(i.id) })
-
-    return [{ productId: "1" }]
+    const data = productsData.data.products.splice(0 ,10)
+    
+    const paths = data.map(i => { productId: String(i.id) })
+    return paths
 }
