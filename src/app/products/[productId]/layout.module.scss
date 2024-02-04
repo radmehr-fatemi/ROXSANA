@@ -1,0 +1,91 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {}
+
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff8e;
+    backdrop-filter: blur(6px);
+    width: 100%;
+    padding: .8rem .4rem;
+    z-index: 101;
+    overflow: hidden;
+    box-shadow: 0 -2px 4px rgb(236, 236, 243);
+}
+
+.price,
+.checkout,
+.quantity {
+    width: 33%;
+}
+
+.price {
+}
+
+.price1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: line-through;
+
+    p {
+        padding: 0 .3rem;
+        background-color: $red;
+        border-radius: 20px;
+        color: #fff;
+    }
+
+    span {
+        color: $red;
+    }
+}
+
+.price2 {
+    text-align: center;
+    padding-top: .2rem;
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+.checkout {
+    width: 30%;
+    text-align: center;
+
+    button {
+        padding: .4rem .6rem;
+        background-color: $red;
+        color: #fff;
+        border-radius: 10px;
+    }
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .8rem;
+
+    span {
+        width: 30px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    svg {
+        font-size: 1.2rem;
+    }
+}
+
+//----------------MD-------------------
+@include md {
+    .sidebar {
+        display: none;
+    }
+}

@@ -18,7 +18,7 @@ const BannerFlex = () => {
                     transition={{ duration: .6 }}
                 >
                     <Link href="/">
-                        <Image className={ styles.image1 } src={"/images/banner-flex/banner-m1.jpg"} width={300} height={400} alt="banner photo" />
+                        <Image priority={true} className={ styles.image1 } src={"/images/banner-flex/banner-m1.jpg"} width={300} height={400} alt="banner photo" />
                     </Link>
                 </motion.div>
 
@@ -29,7 +29,7 @@ const BannerFlex = () => {
                     transition={{ duration: .6 }}
                 >
                     <Link href="/">
-                        <Image className={ styles.image2 } src={"/images/banner-flex/banner-m2.jpg"} width={300} height={800} alt="banner photo" />
+                        <Image priority={true} className={ styles.image2 } src={"/images/banner-flex/banner-m2.jpg"} width={300} height={800} alt="banner photo" />
                     </Link>
                 </motion.div>
             </div>
@@ -42,7 +42,7 @@ const BannerFlex = () => {
                     transition={{ duration: .60 }}
                 >
                     <Link href="/">
-                        <Image className={ styles.image3 } src={"/images/banner-flex/banner-w2.jpg"} width={300} height={800} alt="banner photo" />
+                        <Image priority={true} className={ styles.image3 } src={"/images/banner-flex/banner-w2.jpg"} width={300} height={800} alt="banner photo" />
                     </Link>
                 </motion.div>
                 <motion.div
@@ -52,7 +52,7 @@ const BannerFlex = () => {
                     transition={{ duration: .60 }}
                 >
                     <Link href="/">
-                        <Image className={ styles.image4 } src={"/images/banner-flex/banner-w1.jpg"} width={300} height={400} alt="banner photo" />
+                        <Image priority={true} className={ styles.image4 } src={"/images/banner-flex/banner-w1.jpg"} width={300} height={400} alt="banner photo" />
                     </Link>
                 </motion.div>
             </div>

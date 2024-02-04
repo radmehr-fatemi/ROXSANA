@@ -39,7 +39,7 @@ export default function Banner() {
 
                         <SwiperSlide key={index}>
                             <Link href={`/category/${i}`}>
-                                <Image src={`/images/banner/${i}.jpg`} width={1600} height={500} alt={`${i} photo`} />
+                                <Image src={`/images/banner/${i}.jpg`} width={1600} height={500} alt={`${i} photo`} priority={true} />
                             </Link>
                         </SwiperSlide>
                     ))

@@ -16,7 +16,7 @@ const BannerFlex2 = () => {
                     whileInView={{ opacity: [0 ,1 ,.5 ,1], x: 0 }}
                     viewport={{ once: true }}
                 >
-                    <Image src="/images/banner-flex-2/watch1.jpg" width={600} height={400} alt="banner photo" />
+                    <Image priority={true} src="/images/banner-flex-2/watch1.jpg" width={600} height={400} alt="banner photo" />
                 </motion.div>
             </Link>
 
@@ -26,7 +26,7 @@ const BannerFlex2 = () => {
                     whileInView={{ opacity: [0 ,1 ,.5 ,1], x: 0 }}
                     viewport={{ once: true }}
                 >
-                    <Image src="/images/banner-flex-2/watch2.jpg" width={600} height={400} alt="banner photo" />
+                    <Image priority={true} src="/images/banner-flex-2/watch2.jpg" width={600} height={400} alt="banner photo" />
                 </motion.div>
             </Link>
         </div>

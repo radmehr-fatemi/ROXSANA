@@ -26,7 +26,7 @@ export default function SliderCircle() {
                             <Link
                                 href={`/products/category/${i}`}
                                 className='sliderCircle_card' >
-                                <Image src={`/images/cards/${i}.png`} width={600} height={400} alt={`${i} photo`} />
+                                <Image src={`/images/cards/${i}.png`} width={600} height={400} alt={`${i} photo`} priority={true} />
                             </Link>
                             <p> {shortHandler(i, 12)} </p>
                         </div>
