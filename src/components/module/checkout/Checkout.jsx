@@ -1,24 +1,29 @@
 "use client"
 
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import { discountCounter, findItem } from "@/utils/functions";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 //Icon
 import { icons } from "@/constants/icons";
 
 //action
 import { ADD_ITEMS, DECREMENT, INCREMENT } from "@/redux/features/cart/cartSlice";
-import { discountCounter, findItem } from "@/utils/functions";
-import Link from "next/link";
 
 const Checkout = ({ data, styles }) => {
 
     const { price, discountPercentage: dis, id } = data;
 
     const dispatch = useDispatch();
+    const router = useRouter();
     const store = useSelector(store => store.cart.selectedItems);
 
     return (
-        <div className={styles.checkout} >
+        <div
+            style={{ animation: "fadeIn 1s" }}
+            className={styles.checkout} >
             <div className={styles.price}>
                 <div className={styles.price1}>
                     <p> {dis} % </p>
@@ -32,23 +37,30 @@ const Checkout = ({ data, styles }) => {
             <div className={styles.button}>
                 {
                     !!findItem(store, id)?.qty > 0 ? (
-                        <Link href="/cart"> Go to cart </Link>
+                        <motion.button
+                            style={{ animation: "rubberBand .8s" }}
+                            onClick={() => router.push("/cart")}
+                        > Go to cart
+                        </motion.button>
                     ) : (
                         <button
+                            style={{ animation: "bounceIn .4s" }}
                             onClick={() => dispatch(ADD_ITEMS(data))}
                         >Add to cart</button>
                     )}
             </div>
 
             <div className={styles.quantity}>
-                <p
-                    onClick={() => dispatch(DECREMENT(data))}> {icons.minus} </p>
+                <motion.p
+                    whileTap={{ scale: .0 }}
+                    onClick={() => dispatch(DECREMENT(data))}> {icons.minus} </motion.p>
 
                 <span> {!!findItem(store, id) ? findItem(store, id).qty : 0} </span>
 
-                <p
+                <motion.p
+                    whileTap={{ scale: .0 }}
                     onClick={() => dispatch(!!findItem(store, id) ? INCREMENT(data) : ADD_ITEMS(data))}
-                > {icons.plus} </p>
+                > {icons.plus} </motion.p>
             </div>
         </div>
     )

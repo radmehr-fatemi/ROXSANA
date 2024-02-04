@@ -4,6 +4,9 @@ import styles from "./Footer.module.scss";
 //Icon
 import { icons } from "@/constants/icons";
 
+//Component
+import GoToTop from "@/components/element/go-to-top/GoToTop";
+
 const Footer = () => {
     return (
         <div className={styles.container} >
@@ -13,10 +16,9 @@ const Footer = () => {
                     <p> Phone number : 0912-000-0000 </p>
                     <span> 24-hour response to your questions and problems </span>
                 </div>
-                <a href="#sliderCircle_container">
-                    {icons.arrowRight}
-                    Go to top
-                </a>
+
+                <GoToTop />
+
             </div>
             <div className={styles.field2}>
                 <h4> Join us on social networks </h4>

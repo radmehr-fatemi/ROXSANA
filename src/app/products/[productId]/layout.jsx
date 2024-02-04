@@ -4,12 +4,13 @@ import styles from "./layout.module.scss";
 //Icon
 import { icons } from "@/constants/icons";
 
-const Layout = ({ children }) => {
+const Layout = ({ children ,params:{productId} }) => {
+
     return (
         <div className={styles.container} >
             {children}
 
-            <div className={styles.sidebar} >
+            {/* <div className={styles.sidebar} >
                 <div className={styles.price}>
                     <div className={styles.price1}>
                         <p> 12% </p>
@@ -29,7 +30,7 @@ const Layout = ({ children }) => {
                     <span> 1 </span>
                     {icons.plus}
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

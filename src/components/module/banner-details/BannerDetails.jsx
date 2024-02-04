@@ -13,7 +13,7 @@ export default function BannerDetails({ images }) {
 
     return (
         <div
-            style={{ animation: "zoomInDown .6s" }}
+            style={{ animation: "fadeIn 1s" }}
             className='banner_details_container'>
             <Swiper
                 spaceBetween={30}

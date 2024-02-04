@@ -57,15 +57,21 @@ export default DetailsPage;
 const Title = ({ title, brand }) => {
     return (
         <div className={styles.title}>
-            <h2> {title} </h2>
-            <span> {brand} </span>
+            <h2
+                style={{ animation: "fadeInLeft .6s" }}
+            > {title} </h2>
+            <span
+                style={{ animation: "fadeInLeft .6s .2s" }}
+            > {brand} </span>
         </div>
     )
 }
 
 const Fields = ({ id, rating, icons, views, description }) => {
     return (
-        <div className={styles.fields}>
+        <div
+            style={{ animation: "fadeIn 1s .1s" }}
+            className={styles.fields}>
             <div className={styles.field1}>
                 <div className={styles.field1_1}>
                     <p> Product ID : </p>
@@ -80,22 +86,30 @@ const Fields = ({ id, rating, icons, views, description }) => {
                 </div>
             </div>
             <div className={styles.field2}>
-                <div>
+                <div
+                    style={{ animation: "bounceIn .6s .3s" }}
+                >
                     {icons.carFast}
                     <p>Immediate delivery</p>
                 </div>
 
-                <div>
+                <div
+                    style={{ animation: "bounceIn .6s .4s" }}
+                >
                     {icons.map}
                     <p>Shipping nationwide</p>
                 </div>
 
-                <div>
+                <div
+                    style={{ animation: "bounceIn .6s .5s" }}
+                >
                     {icons.guarantee}
                     <p>7 days of your time</p>
                 </div>
 
-                <div>
+                <div
+                    style={{ animation: "bounceIn .6s .6s" }}
+                >
                     {icons.lowest}
                     <p>the lowest price</p>
                 </div>
@@ -111,7 +125,9 @@ const Fields = ({ id, rating, icons, views, description }) => {
 
 const Comments = ({ data }) => {
     return (
-        <div className={styles.comments}>
+        <div
+            style={{ animation: "fadeIn 1s .1s" }}
+            className={styles.comments}>
             <h2>User comments :</h2>
             {
                 data.map(i => (
