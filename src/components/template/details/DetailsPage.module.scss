@@ -26,7 +26,7 @@
         z-index: 10;
 
     }
-    
+
     svg {
         color: #fff;
     }
@@ -234,6 +234,10 @@
         padding: 1rem 2rem;
     }
 
+    .header span {
+        top: 12rem;
+    }
+
     .flex {
         display: flex;
         justify-content: space-between;
@@ -251,6 +255,7 @@
         margin: 1rem 0;
         box-shadow: 0 0 8px $shadow2;
         border-radius: 10px;
+        z-index: 1;
     }
 
     .button {
