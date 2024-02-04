@@ -3,20 +3,18 @@ import { icons } from "@/constants/icons";
 
 //Style
 import styles from "./DetailsPage.module.scss";
-//Component
 
+//Component
 import BannerDetails from "@/module/banner-details/BannerDetails";
 import SliderMain from "@/module/slider-main/SliderMain";
 import Checkout from "@/module/checkout/Checkout";
+import PushBack from "@/components/element/back-push/PushBach";
 
 const DetailsPage = async ({ data }) => {
 
     const { title,
         description,
-        price,
-        discountPercentage: dis,
         rating,
-        stock,
         brand,
         category,
         images,
@@ -33,6 +31,9 @@ const DetailsPage = async ({ data }) => {
 
     return (
         <div className={styles.container} >
+
+            <PushBack styles={styles} />
+
             <div className={styles.flex} >
                 <div className={styles.banner}>
                     <BannerDetails images={images} />
