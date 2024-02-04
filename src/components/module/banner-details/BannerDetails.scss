@@ -4,11 +4,23 @@
 .banner_details_container {
     width: 100%;
     height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 4px $shadow2;
+
+    @include md {
+        height: 320px;
+        padding: 1rem;
+    }
 
     img {
         border-radius: 4px;
+
+        @include md {
+            // width: 60%;
+            // height: 100%;
+        }
     }
-    
+
     .banner_details {
         padding: .2rem;
     }
@@ -16,8 +28,13 @@
     .swiper {
         height: 100%;
         width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 0 4px $shadow2;
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            background-color: antiquewhite;
+        }
     }
 
     .swiper-pagination {

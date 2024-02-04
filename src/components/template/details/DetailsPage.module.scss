@@ -128,7 +128,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 1rem ;
+    padding: 1rem;
     margin: 1rem 0;
     box-shadow: 0 0 8px $shadow2;
     border-radius: 10px;
@@ -141,14 +141,12 @@
     padding: .6rem 0;
 }
 
-.price {
-}
+.price {}
 
 .price1 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    text-decoration: line-through;
 
     p {
         padding: 0 .3rem;
@@ -159,6 +157,7 @@
 
     span {
         color: $red;
+        text-decoration: line-through;
     }
 }
 
@@ -202,15 +201,19 @@
         font-size: 1.5rem;
     }
 
-    svg {
+    p {
         width: 33%;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: all .1s;
 
-        &:hover {
-            color: $blue;
+        svg {
+            width: 100%;
+            font-size: 1.2rem;
+            cursor: pointer;
             transition: all .1s;
+
+            &:hover {
+                color: $blue;
+                transition: all .1s;
+            }
         }
     }
 }
@@ -220,12 +223,12 @@
     .container {
         padding: 1rem 2rem;
     }
-    
+
     .flex {
         display: flex;
         justify-content: space-between;
     }
-    
+
     .banner {
         width: 40%;
     }

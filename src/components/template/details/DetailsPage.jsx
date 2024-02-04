@@ -1,12 +1,13 @@
-//Component
-import BannerDetails from "@/module/banner-details/BannerDetails";
-
 //Icon
 import { icons } from "@/constants/icons";
 
 //Style
 import styles from "./DetailsPage.module.scss";
-import SliderMain from "@/components/module/slider-main/SliderMain";
+//Component
+
+import BannerDetails from "@/module/banner-details/BannerDetails";
+import SliderMain from "@/module/slider-main/SliderMain";
+import Checkout from "@/module/checkout/Checkout";
 
 const DetailsPage = async ({ data }) => {
 
@@ -35,7 +36,7 @@ const DetailsPage = async ({ data }) => {
             <div className={styles.flex} >
                 <div className={styles.banner}>
                     <BannerDetails images={images} />
-                    <Checkout />
+                    <Checkout data={data} styles={styles} />
                 </div>
 
                 <div className={styles.fieldContainer}>
@@ -52,32 +53,6 @@ const DetailsPage = async ({ data }) => {
 };
 
 export default DetailsPage;
-
-const Checkout = () => {
-    return (
-        <div className={styles.checkout} >
-            <div className={styles.price}>
-                <div className={styles.price1}>
-                    <p> 12% </p>
-                    <span> 240$ </span>
-                </div>
-                <div className={styles.price2}>
-                    <p> 222 $ </p>
-                </div>
-            </div>
-
-            <div className={styles.button}>
-                <button>Add to cart</button>
-            </div>
-
-            <div className={styles.quantity}>
-                {icons.minus}
-                <span> 1 </span>
-                {icons.plus}
-            </div>
-        </div>
-    )
-}
 
 const Title = ({ title, brand }) => {
     return (
