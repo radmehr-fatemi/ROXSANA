@@ -16,6 +16,7 @@ import { TiPlus } from "react-icons/ti";
 import { FaMinus } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { RiArrowGoBackLine } from "react-icons/ri";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 export const icons = {
     search: <RiSearch2Line />,
@@ -35,4 +36,5 @@ export const icons = {
     minus: <FaMinus />,
     cross: <RxCross2 />,
     back: <RiArrowGoBackLine />,
+    trash: <RiDeleteBinLine />,
 };

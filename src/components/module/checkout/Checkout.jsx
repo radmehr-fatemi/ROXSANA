@@ -52,12 +52,16 @@ const Checkout = ({ data, styles }) => {
 
             <div className={styles.quantity}>
                 <motion.p
+                    style={{ animation: "bounceInUp .3s" }}
                     whileTap={{ scale: .0 }}
-                    onClick={() => dispatch(DECREMENT(data))}> {icons.minus} </motion.p>
+                    onClick={() => dispatch(DECREMENT(data))}> {+(findItem(store, id)?.qty) === 1 ? icons.trash : icons.minus} </motion.p>
 
-                <span> {!!findItem(store, id) ? findItem(store, id).qty : 0} </span>
+                <span
+                    style={{ animation: "bounceInUp .3s .2s" }}
+                > {!!findItem(store, id) ? findItem(store, id).qty : 0} </span>
 
                 <motion.p
+                    style={{ animation: "bounceInUp .3s .4s" }}
                     whileTap={{ scale: .0 }}
                     onClick={() => dispatch(!!findItem(store, id) ? INCREMENT(data) : ADD_ITEMS(data))}
                 > {icons.plus} </motion.p>
