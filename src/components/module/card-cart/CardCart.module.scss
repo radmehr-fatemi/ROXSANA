@@ -4,6 +4,7 @@
 .container {
     width: 100%;
     padding: .4rem 1rem;
+    overflow: hidden;
 }
 
 .field1 {
@@ -39,6 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    overflow: hidden;
     
     div {
         width: 100px;
@@ -48,6 +50,10 @@
         border: 2px solid $red;
         border-radius: 10px;
         padding: 0 .2rem;
+    }
+
+    svg {
+        cursor: pointer;
     }
 }
 

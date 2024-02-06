@@ -17,6 +17,7 @@ import { FaMinus } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { IoIosArrowForward } from "react-icons/io";
 
 export const icons = {
     search: <RiSearch2Line />,
@@ -24,7 +25,7 @@ export const icons = {
     category: <TbCategory />,
     user: <AiOutlineUser />,
     cart: <FaOpencart />,
-    arrowRight: <IoIosArrowUp />,
+    arrowTop: <IoIosArrowUp />,
     instagram: <BsInstagram />,
     telegram: <PiTelegramLogoBold />,
     star: <IoIosStar />,
@@ -37,4 +38,5 @@ export const icons = {
     cross: <RxCross2 />,
     back: <RiArrowGoBackLine />,
     trash: <RiDeleteBinLine />,
+    arrowRight: <IoIosArrowForward />,
 };

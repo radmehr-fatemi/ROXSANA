@@ -1,0 +1,106 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    @include max;
+    width: 100%;
+    padding: 1rem;
+    padding-top: .2rem;
+}
+
+.header {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to top left, rgb(0, 247, 255) ,rgb(0, 102, 255));
+    text-shadow: 0 0 2px #536078;
+    box-shadow: 0 2px 4px #b3bbca;
+    border-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: .4rem .4rem .2rem .4rem;
+    margin: .4rem 0;
+    color: #fff;
+    overflow: hidden;
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    svg {
+        font-size: 1.1rem;
+    }
+}
+
+.sidBar {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffffae;
+    backdrop-filter: blur(4px);
+    z-index: 101;
+    padding: .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -1px 1px $shadow2;
+    overflow: hidden;
+}
+
+.field1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    button {
+        padding: .2rem 1rem;
+        background-color: $red;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+}
+
+.field2 {
+    width: 50%;
+    height: 60%;
+    text-align: center;
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    span {
+        font-size: 1.3rem;
+    }
+}
+
+//-----------------MD-----------------
+@include md {
+    .container {
+        width: 90%;
+    }
+    
+    .header {
+        width: 30%;
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .sidBar {
+        display: none;
+    }
+}

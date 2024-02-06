@@ -20,6 +20,8 @@
 }
 
 .checkout_header {
+    display: none;
+    
     h2 {
         display: flex;
         align-items: end;
@@ -56,7 +58,6 @@
 }
 
 .checkout_payable {
-    border-bottom: 1px solid #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -64,8 +65,10 @@
 }
 
 .checkout_button {
+    display: none;
     text-align: center;
     padding: 1rem 0;
+    border-top: 1px solid #fff;
 
     button {
         padding: 1rem 2rem;
@@ -80,9 +83,25 @@
     .container {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: space-between;
+        padding: 1rem 0;
     }
 
+    .cards {
+        width: 65%;
+    }
+    
     .checkout {
         width: 30%;
+        position: sticky;
+        top: 10rem;
+    }
+
+    .checkout_header {
+        display: block;
+    }
+
+    .checkout_button {
+        display: block;
     }
 }

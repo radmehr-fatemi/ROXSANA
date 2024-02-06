@@ -16,7 +16,7 @@ const GoToTop = () => {
             whileTap={{ scale: .9 }}
             onClick={topHandler}
         >
-            {icons.arrowRight}
+            {icons.arrowTop}
             Go to top
         </motion.button>
     );

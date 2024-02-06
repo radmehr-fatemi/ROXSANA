@@ -24,3 +24,15 @@ export const findItem = (items, id) => {
     const found = items[index];
     return found
 }
+
+export const totalCounter = (items) => {
+    console.log(items)
+    if ( !items?.length ) return {}
+    const itemsCounter = items.reduce( (acc ,cur) => acc + cur.qty ,0);
+    const total = items.reduce( (acc ,cur) => acc + (cur.price * cur.qty) ,0);
+    const totalDiscount = items.reduce( (acc ,cur) => acc + ((cur.discountPercentage * +cur.price / 100) * cur.qty) ,0 );
+    // const payable = items.reduce( (acc ,cur) => acc + ((100 - cur.discountPercentage) * +cur.price / 100) ,0 );
+    const payable = total - totalDiscount;
+
+    return { itemsCounter ,total ,payable ,totalDiscount }
+}
