@@ -10,6 +10,7 @@ import styles from "./Header.module.scss";
 import { icons } from "@/constants/icons";
 
 const Header = () => {
+    
     return (
         <div
             className={styles.container}

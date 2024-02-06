@@ -22,6 +22,10 @@
         overflow: hidden;
     }
 
+    li {
+        position: relative;
+    }
+
     svg {
         color: #fff;
         animation: Live 5s infinite;
@@ -39,6 +43,22 @@
         animation: none;
         transform: translateY(-8px);
     }
+}
+
+//-------qtyCart----
+.qtyCart {
+    position: absolute;
+    top: -.8rem;
+    right: -1.2rem;
+    border-radius: 50%;
+    background-color: $red;
+    color: #fff;
+    min-width: 30px;
+    min-height: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+    padding-top: .2rem;
+    animation: Show .8s;
 }
 
 //------------Animation------------
@@ -59,6 +79,16 @@
 
     100% {
         transform: translateY(-1px);
+    }
+}
+
+@keyframes Show {
+    0% {
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
     }
 }
 

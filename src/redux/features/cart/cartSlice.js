@@ -47,6 +47,7 @@ const cartSlice = createSlice({
                 if (action.payload.stock > state.selectedItems[indexI].qty) {
                     state.selectedItems[indexI].qty++
                 }
+                state.checkout = false
                 state.itemsCounter = totalCounter(state.selectedItems).itemsCounter
                 state.total = totalCounter(state.selectedItems).total
                 state.totalDiscount = totalCounter(state.selectedItems).totalDiscount
@@ -60,6 +61,7 @@ const cartSlice = createSlice({
                 if (state.selectedItems[indexD].qty > 0) {
                     state.selectedItems[indexD].qty--
                 }
+                state.checkout = false
                 state.itemsCounter = totalCounter(state.selectedItems).itemsCounter
                 state.total = totalCounter(state.selectedItems).total
                 state.totalDiscount = totalCounter(state.selectedItems).totalDiscount
@@ -72,6 +74,7 @@ const cartSlice = createSlice({
                 const indexR = state.selectedItems.findIndex(i => i.id === action.payload.id);
                 state.selectedItems.splice(indexR, 1)
             }
+            state.checkout = false
             state.itemsCounter = totalCounter(state.selectedItems).itemsCounter
             state.total = totalCounter(state.selectedItems).total
             state.totalDiscount = totalCounter(state.selectedItems).totalDiscount

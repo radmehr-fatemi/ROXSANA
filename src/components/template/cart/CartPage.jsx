@@ -1,7 +1,11 @@
 "use client"
 
-import { icons } from "@/constants/icons";
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
+
+//Icon
+import { icons } from "@/constants/icons";
 
 //Style
 import styles from "./CartPage.module.scss";
@@ -11,19 +15,30 @@ import { CHECKOUT } from "@/redux/features/cart/cartSlice";
 
 //Component
 import CardCart from "@/module/card-cart/CardCart";
+import { BallTriangle } from "react-loader-spinner";
 
 const CartPage = () => {
 
     const dispatch = useDispatch()
     const store = useSelector(s => s.cart);
 
+    const checkoutHandler = () => {
+        dispatch(CHECKOUT())
+        toast.success("payment was successfully")
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.cards}>
                 {
-                    store.selectedItems.map(i => (
-                        <CardCart key={i.id} data={i} dispatch={dispatch} />
-                    ))
+                    !!store.itemsCounter < 1 ? (
+                        <EmptyCart />
+                    ) : (
+
+                        store.selectedItems.map(i => (
+                            <CardCart key={i.id} data={i} dispatch={dispatch} />
+                        ))
+                    )
                 }
             </div>
 
@@ -40,21 +55,63 @@ const CartPage = () => {
                 </div>
                 <div className={styles.checkout_discounts}>
                     <p> Products discount </p>
-                    <span> {store.totalDiscount.toFixed(2)} $ </span>
+                    <span> {store.totalDiscount?.toFixed(2)} $ </span>
                 </div>
                 <div className={styles.checkout_payable}>
                     <p> The amount payable </p>
-                    <span> {store.payable.toFixed(2)} $ </span>
+                    <span> {store.payable?.toFixed(2)} $ </span>
                 </div>
 
                 <div className={styles.checkout_button}>
-                    <button
-                        onClick={() => dispatch(CHECKOUT())}
-                    > Proceed to pay </button>
+                    {
+                        store.itemsCounter < 1 ? (
+                            store.checkout ? (
+                                <Link
+                                    style={{ animation: "zoomIn .6s" }}
+                                    href="/"> Would you buy more ? </Link>
+                            ) : (
+                                <Link
+                                    style={{ animation: "zoomIn .6s" }}
+                                    href="/"> Would you buy ? </Link>
+                            )
+                        ) : (
+
+
+                            <button
+                                onClick={checkoutHandler}
+                            > Proceed to pay </button>
+                        )
+                    }
                 </div>
             </div>
+            <Toaster />
         </div>
     );
 };
 
 export default CartPage;
+
+const EmptyCart = () => {
+    return (
+        <div
+            style={{ animation: "zoomIn .4s" }}
+            className={styles.emptyCart}>
+            <BallTriangle
+                height={100}
+                width={100}
+                radius={5}
+                color="#00E0FF"
+                ariaLabel="ball-triangle-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+            />
+            <h2
+                style={{ animation: "zoomIn .6s .2s" }}
+            > Your shopping cart is empty </h2>
+            <Link
+                style={{ animation: "zoomIn .6s .2s" }}
+                href="/" > Keep shopping </Link>
+        </div>
+    )
+}

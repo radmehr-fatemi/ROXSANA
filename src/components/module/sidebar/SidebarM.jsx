@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 //Style
 import styles from "./SidebarM.module.scss";
@@ -12,6 +13,7 @@ import { icons } from "@/constants/icons";
 const SidebarM = () => {
 
     const [pathname, setPathname] = useState("/");
+    const store = useSelector(s => s.cart);
 
     useEffect(() => {
         const path = window.location.pathname;
@@ -24,9 +26,9 @@ const SidebarM = () => {
 
     return (
         <div
-         className={styles.container}
-         style={{ animation :  "zoomInUp .5s" }}
-         >
+            className={styles.container}
+            style={{ animation: "zoomInUp .5s" }}
+        >
             <ul>
                 <li
                     onClick={() => checkedHandler("/")}
@@ -44,7 +46,10 @@ const SidebarM = () => {
                     onClick={() => checkedHandler("/cart")}
                     className={pathname === "/cart" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .4s" }}
-                ><Link href="/cart" > {icons.cart} </Link></li>
+                >
+                    <Link href="/cart" > {icons.cart} </Link>
+                    {store.itemsCounter > 0 && <span className={styles.qtyCart}> {store.itemsCounter} </span>}
+                </li>
 
                 <li
                     onClick={() => checkedHandler("/categories")}

@@ -3,6 +3,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
 
 //Action
 import { CHECKOUT } from "@/redux/features/cart/cartSlice";
@@ -12,6 +13,7 @@ import { icons } from "@/constants/icons";
 
 //Style
 import styles from "./LayoutCart.module.scss";
+import Link from "next/link";
 
 const LayoutCart = ({ children }) => {
 
@@ -19,11 +21,16 @@ const LayoutCart = ({ children }) => {
     const router = useRouter();
     const store = useSelector(s => s.cart);
 
+    const checkoutHandler = () => {
+        dispatch(CHECKOUT())
+        toast.success("payment was successfully")
+    }
     return (
         <div className={styles.container}>
             <Header router={router} />
             {children}
-            <SidBar total={store.total} router={router} dispatch={dispatch}/>
+            <SidBar store={store} router={router} checkoutHandler={checkoutHandler} />
+            <Toaster />
         </div>
     );
 };
@@ -50,14 +57,33 @@ const Header = ({ router }) => {
     )
 }
 
-const SidBar = ({ total, router, dispatch }) => {
+const SidBar = ({ store: { total, itemsCounter, checkout }, router, checkoutHandler }) => {
+    if (itemsCounter === 0) return (
+        <div
+            style={{ animation: "fadeIn .6s" }}
+            className={styles.sidBarEmpty}>
+
+            {
+                checkout ? (
+                    <Link
+                        style={{ animation: "zoomIn .6s" }}
+                        href="/"> Would you buy more ? </Link>
+                ) : (
+                    <Link
+                        style={{ animation: "zoomIn .6s" }}
+                        href="/"> Would you buy ? </Link>
+                )}
+
+        </div>
+    )
+
     return (
         <div
-        style={{ animation: "fadeIn .6s" }}
-        className={styles.sidBar}>
+            style={{ animation: "fadeIn .6s" }}
+            className={styles.sidBar}>
             <div className={styles.field1}>
                 <motion.button
-                    onClick={() => dispatch(CHECKOUT())}
+                    onClick={checkoutHandler}
                     whileTap={{ scale: .9 }}
                 > Proceed to pay </motion.button>
 
