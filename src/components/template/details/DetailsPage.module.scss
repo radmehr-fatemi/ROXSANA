@@ -8,31 +8,6 @@
     overflow: hidden;
 }
 
-.header {
-    position: relative;
-
-    span {
-        position: fixed;
-        top: 6rem;
-        left: -0;
-        display: flex;
-        justify-content: end;
-        padding-right: .2rem;
-        font-size: 2.6rem;
-        background-color: rgba(0, 0, 255, 0.42);
-        backdrop-filter: blur(4px);
-        width: 60px;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
-        z-index: 10;
-        cursor: pointer;
-    }
-
-    svg {
-        color: #fff;
-    }
-}
-
 .banner {
     width: 100%;
 }
@@ -233,10 +208,6 @@
 @include md {
     .container {
         padding: 1rem 2rem;
-    }
-
-    .header span {
-        top: 12rem;
     }
 
     .flex {

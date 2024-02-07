@@ -53,9 +53,9 @@ const SidebarM = () => {
 
                 <li
                     onClick={() => checkedHandler("/categories")}
-                    className={pathname === "/categories" ? styles.selected : styles.null}
+                    className={pathname === "/products/categories" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .6s" }}
-                ><Link href="/categories" > {icons.category} </Link></li>
+                ><Link href="/products/categories" > {icons.category} </Link></li>
 
                 <li
                     onClick={() => checkedHandler("/")}

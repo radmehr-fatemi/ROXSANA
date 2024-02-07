@@ -3,7 +3,10 @@
 import { icons } from "@/constants/icons";
 import { useRouter } from "next/navigation";
 
-const PushBack = ({ styles }) => {
+//Style
+import styles from "./PushBach.module.scss";
+
+const PushBack = () => {
 
     const router = useRouter();
 

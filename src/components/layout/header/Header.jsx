@@ -69,7 +69,7 @@ const Header = () => {
                     ><Link href="/" > {icons.home} Home </Link></li>
                     <li
                         style={{ animation: "zoomIn .4s .6s" }}
-                    ><Link href="/categories" > Categories </Link></li>
+                    ><Link href="/products/categories" > Categories </Link></li>
                     <li
                         style={{ animation: "zoomIn .4s .8s" }}
                     ><Link href="/dashboard" > About us </Link></li>

@@ -19,7 +19,6 @@ const SidebarH = () => {
 
     const clickHandler = () => {
         setClicked(!clicked)
-        console.log(window.location.pathname)
     }
 
     return (
@@ -42,7 +41,7 @@ const SidebarH = () => {
                             ><Link href="/" > {icons.home} Home </Link></li>
                             <li
                                 onClick={clickHandler}
-                            ><Link href="/categories" > {icons.category} Categories </Link></li>
+                            ><Link href="/products/categories" > {icons.category} Categories </Link></li>
                             <li
                                 onClick={clickHandler}
                             ><Link href="/dashboard" > {icons.user} Account </Link></li>
