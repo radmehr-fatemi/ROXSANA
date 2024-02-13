@@ -1,0 +1,43 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    overflow: hidden;
+    
+    h2 {
+        width: fit-content;
+        background: linear-gradient(to top left, rgb(0, 247, 255), rgb(0, 102, 255));
+        text-shadow: 0 0 2px #536078;
+        box-shadow: 0 2px 4px #b3bbca;
+        border-radius: 20px;
+        padding: .4rem 1rem .2rem 1rem;
+        margin-top: 1rem;
+        color: #fff;
+        overflow: hidden;
+    }
+}
+
+.cards {
+    width: 100%;
+    padding: .4rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+}
+
+.card {
+    width: 48%;
+    padding: .6rem;
+
+    @include md {
+        width: 220px;
+    }
+}

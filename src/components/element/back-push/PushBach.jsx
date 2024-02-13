@@ -11,9 +11,7 @@ const PushBack = () => {
     const router = useRouter();
 
     return (
-        <div
-            style={{ animation: "fadeIn 1s" }}
-            className={styles.header}>
+        <div className={styles.header}>
             <span onClick={() => router.back()} >
                 {icons.back}
             </span>

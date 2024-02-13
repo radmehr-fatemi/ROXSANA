@@ -35,3 +35,9 @@ export const totalCounter = (items) => {
 
     return { itemsCounter ,total ,payable ,totalDiscount }
 }
+
+export const filterFetch = ( data=[] ,dig1 ,dig2 ) => {
+    const newData = [...data];
+    const slicer = newData.slice(dig1 ,dig2)
+    return slicer
+}

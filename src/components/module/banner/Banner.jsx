@@ -38,7 +38,7 @@ export default function Banner() {
                     items.map((i, index) => (
 
                         <SwiperSlide key={index}>
-                            <Link href={`/category/${i}`}>
+                            <Link href={`/products/category/${i}`}>
                                 <Image src={`/images/banner/${i}.jpg`} width={1600} height={500} alt={`${i} photo`} priority={true} />
                             </Link>
                         </SwiperSlide>

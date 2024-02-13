@@ -14,9 +14,13 @@ import './SliderSpecial.scss';
 import CardHome from '@/module/card-home/CardHome';
 import SmallSpinner from '@/module/spinner/small-spinner/SmallSpinner';
 
+//function
+import { filterFetch } from "@/utils/functions";
+
 export default function SliderSpecial({ productsData }) {
 
     const { data ,isLoading }  = useSWR(`${process.env.NEXT_PUBLIC_BASE_URL}/products`, (url) => axios.get(url).then(res => res.data))
+    const newData = filterFetch(data?.products ,1);
 
     return (
         <div
@@ -41,10 +45,10 @@ export default function SliderSpecial({ productsData }) {
                         slidesPerView: 5,
                         spaceBetween: 40,
                     },
-                    1240: {
-                        slidesPerView: 6,
-                        spaceBetween: 40,
-                    },
+                    // 1240: {
+                    //     slidesPerView: 6,
+                    //     spaceBetween: 40,
+                    // },
                     // 1440: {
                     //     slidesPerView: 6,
                     //     spaceBetween: 40,
@@ -61,7 +65,7 @@ export default function SliderSpecial({ productsData }) {
                             <SmallSpinner />
                         </div>
                     ) :
-                        data.products.map((i, index) => (
+                        newData.map((i, index) => (
                             <SwiperSlide
                                 style={{ animation: `fadeInRight .4s .${index + 2}s` }}
                                 key={i.id}>

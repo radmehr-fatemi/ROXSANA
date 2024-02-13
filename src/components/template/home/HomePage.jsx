@@ -9,12 +9,15 @@ import SliderMain from "@/module/slider-main/SliderMain";
 import BannerFlex from "@/module/banner-flex/BannerFlex";
 import BannerFlex2 from "@/module/banner-flex-2/BannerFlex2";
 
+//function
+import { filterFetch } from "@/utils/functions";
+
 const HomePage = ({ productsData, categoriesData }) => {
     return (
         <div className={ styles.container } >
            <SliderCircle categoriesData={categoriesData} />
             <Banner />
-            <SliderSpecial productsData={productsData} />
+            <SliderSpecial productsData={filterFetch(productsData ,1 )} />
             <SliderMain data={productsData}> New products </SliderMain>
             <SliderMain data={productsData}> Smartphones </SliderMain>
             <BannerFlex />
