@@ -12,12 +12,12 @@ const Searcher = ({ styles }) => {
     const [input, setInput] = useState("")
     const [clicked, setClicked] = useState(false);
     const router = useRouter();
-    const query = window.location.search.slice(3);
-
+    
     useEffect(() => {
+        const query = window.location.search.slice(3);
         if (!input?.length) setInput(query)
         setClicked(false)
-    }, [query])
+    }, [])
 
     const changHandler = ({ target }) => {
         setInput(target.value)
