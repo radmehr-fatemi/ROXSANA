@@ -61,6 +61,7 @@
     border-radius: 10px;
     color: rgb(48, 48, 255);
     margin-left: 1rem;
+    overflow: hidden;
 
     @include lg {
     margin-left: 2.2rem;

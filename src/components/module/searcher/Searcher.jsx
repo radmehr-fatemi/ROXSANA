@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 
 //Icon
@@ -12,12 +12,12 @@ const Searcher = ({ styles }) => {
     const [input, setInput] = useState("")
     const [clicked, setClicked] = useState(false);
     const router = useRouter();
+    const query = useSearchParams().get("q");
     
     useEffect(() => {
-        const query = window.location.search.slice(3);
         if (!input?.length) setInput(query)
-        setClicked(false)
-    }, [])
+        setClicked(!clicked)
+    }, [query])
 
     const changHandler = ({ target }) => {
         setInput(target.value)

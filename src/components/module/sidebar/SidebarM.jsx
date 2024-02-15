@@ -9,20 +9,12 @@ import styles from "./SidebarM.module.scss";
 
 //Icon
 import { icons } from "@/constants/icons";
+import { usePathname } from "next/navigation";
 
 const SidebarM = () => {
 
-    const [pathname, setPathname] = useState("/");
     const store = useSelector(s => s.cart);
-
-    useEffect(() => {
-        const path = window.location.pathname;
-        setPathname(path)
-    }, [])
-
-    const checkedHandler = (path) => {
-        setPathname(path)
-    }
+    const pathname = usePathname()
 
     return (
         <div
@@ -31,19 +23,16 @@ const SidebarM = () => {
         >
             <ul>
                 <li
-                    onClick={() => checkedHandler("/")}
                     className={pathname === "/" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s" }}
                 ><Link href="/" > {icons.home} </Link></li>
 
                 <li
-                    onClick={() => checkedHandler("/search")}
-                    className={pathname === "/search" ? styles.selected : styles.null}
+                    className={pathname === "/products/search" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .2s " }}
                 ><Link href="/products/search" > {icons.search} </Link></li>
 
                 <li
-                    onClick={() => checkedHandler("/cart")}
                     className={pathname === "/cart" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .4s" }}
                 >
@@ -52,13 +41,11 @@ const SidebarM = () => {
                 </li>
 
                 <li
-                    onClick={() => checkedHandler("/categories")}
                     className={pathname === "/products/categories" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .6s" }}
                 ><Link href="/products/categories" > {icons.category} </Link></li>
 
                 <li
-                    onClick={() => checkedHandler("/")}
                     className={pathname === "/dashboard" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .7s" }}
                 ><Link href="/dashboard" > {icons.user} </Link></li>
