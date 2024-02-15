@@ -57,7 +57,7 @@ const Header = ({ router }) => {
     )
 }
 
-const SidBar = ({ store: { total, itemsCounter, checkout }, router, checkoutHandler }) => {
+const SidBar = ({ store: { payable, itemsCounter, checkout }, router, checkoutHandler }) => {
     if (itemsCounter === 0) return (
         <div
             style={{ animation: "fadeIn .6s" }}
@@ -94,7 +94,7 @@ const SidBar = ({ store: { total, itemsCounter, checkout }, router, checkoutHand
             </div>
             <div className={styles.field2}>
                 <p> The amount payable </p>
-                <span> {total} $ </span>
+                <span> {payable?.toFixed(2)} $ </span>
             </div>
         </div>
     )
