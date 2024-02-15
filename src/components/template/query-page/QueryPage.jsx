@@ -10,7 +10,7 @@ const QueryPage = ({ data, title }) => {
         <div className={ styles.container }>
             <div className={ styles.header }>
             <h2
-            style={{animation: "bounceInUp 1s"}}
+            style={{animation: "fadeInDown 1s"}}
             > {title} </h2>
             </div>
             
@@ -18,7 +18,7 @@ const QueryPage = ({ data, title }) => {
                 {
                     data.map((i ,index) => (
                         <div 
-                        style={{animation: `bounceIn 1s .${index + 2}s`}}
+                        style={{animation: `zoomIn .8s .${index + 2}s`}}
                         className={ styles.card }
                         key={i.id}>
                             <CardHome data={i} />

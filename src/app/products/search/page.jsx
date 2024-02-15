@@ -5,7 +5,6 @@ import axios from "axios";
 const Search = async ({searchParams:{ q }}) => {
 
     const data = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products/search?q=${q}`).then(res => res.data.products);
-    console.log(data)
 
     return <SearchPage data={data} query={q} />
 };

@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 //Component
-import SidebarH from "@/components/module/sidebar/SidebarH";
+import SidebarH from "@/module/sidebar/SidebarH";
+import Searcher from "@/module/searcher/Searcher";
 
 //Style
 import styles from "./Header.module.scss";
@@ -10,7 +11,6 @@ import styles from "./Header.module.scss";
 import { icons } from "@/constants/icons";
 
 const Header = () => {
-    
     return (
         <div
             className={styles.container}
@@ -39,12 +39,8 @@ const Header = () => {
                             style={{ animation: "zoomIn .4s .2s" }}
                         ><Link href="/" > Roxana </Link></h1>
 
-                        <form
-                            style={{ animation: "zoomIn .3s" }}
-                            className={styles.form}>
-                            {icons.search}
-                            <input type="text" placeholder="search..." />
-                        </form>
+                        <Searcher styles={styles} />
+
                     </div>
                     <div className={styles.field2_f1_right}>
                         <Link
