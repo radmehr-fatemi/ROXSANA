@@ -1,4 +1,5 @@
 //Style
+import ScrollToTop from "@/components/element/scroll-to-top/ScrollToTop";
 import styles from "./QueryPage.module.scss";
 
 //Component
@@ -27,6 +28,7 @@ const QueryPage = ({ data, title }) => {
                 }
             </div>
             <PushBack />
+            <ScrollToTop />
         </div>
     );
 };
