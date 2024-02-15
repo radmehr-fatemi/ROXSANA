@@ -1,0 +1,45 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    width: 100%;
+}
+
+.form {
+    background: linear-gradient(to right, rgb(0, 217, 255) ,rgb(0, 115, 255));
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 1rem auto;
+    border-radius: 8px;
+    padding: .4rem;
+    color: #fff;
+    text-shadow: 0 0 4px #333;
+
+    input {
+        background: none;
+
+        &::placeholder {
+            color: #f5f5f5;
+        }
+    }
+
+    svg {
+        font-size: 1.4rem;
+        margin-right: .2rem;
+    }
+
+    button {
+        background: rgb(50, 50, 215);
+        padding: .1rem .2rem;
+        border-radius: 4px;
+    }
+}
+
+.spinner {
+    width: 100%;
+    min-height: calc(100vh - 12rem);
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}

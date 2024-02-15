@@ -40,7 +40,7 @@ const SidebarM = () => {
                     onClick={() => checkedHandler("/search")}
                     className={pathname === "/search" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .2s " }}
-                ><Link href="/search" > {icons.search} </Link></li>
+                ><Link href="/products/search" > {icons.search} </Link></li>
 
                 <li
                     onClick={() => checkedHandler("/cart")}

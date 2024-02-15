@@ -26,7 +26,7 @@ const Header = () => {
                 <div
                     style={{ animation: "zoomIn .4s .3s" }}
                 >
-                    <Link href="/search">
+                    <Link href="/products/search">
                         {icons.search}
                     </Link>
                 </div>
