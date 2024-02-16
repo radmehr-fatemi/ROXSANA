@@ -9,6 +9,7 @@ import styles from "./Header.module.scss";
 
 //Icon
 import { icons } from "@/constants/icons";
+import CartIcon from "@/components/element/cart/CartIcon";
 
 const Header = () => {
     return (
@@ -49,12 +50,8 @@ const Header = () => {
                             {icons.user}
                             Login
                         </Link>
-                        <Link
-                            style={{ animation: "zoomIn .4s .4s" }}
-                            href="/cart">
-                            {icons.cart}
-                            Cart
-                        </Link>
+                        
+                        <CartIcon styles={styles} />
 
                     </div>
                 </div>

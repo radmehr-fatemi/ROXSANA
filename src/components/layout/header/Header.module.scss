@@ -100,6 +100,28 @@
             font-size: 1.5rem;
         }
     }
+
+    .cartIcon {
+        position: relative;
+
+        span {
+            position: absolute;
+            top: -.8rem;
+            right: -.4rem;
+            background-color: $red;
+            color: #fff;
+            border-radius: 50px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: .2rem;
+            font-size: .8rem;
+            border: 2px solid #fff;
+            animation: Show2 .6s forwards;
+        }
+    }
 }
 
 .field2_f2 {
@@ -135,6 +157,12 @@
         transform: rotate(90deg);
     }
     
+}
+@keyframes Show2 {
+    0% {
+        transform: translate(-100% ,100%);
+        opacity: 0;
+    }
 }
 
 // -----------------MD-----------------

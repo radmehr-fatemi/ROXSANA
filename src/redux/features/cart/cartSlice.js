@@ -97,9 +97,21 @@ const cartSlice = createSlice({
             state.selectedItems = []
             state.total = 0
             state.totalDiscount = 0
+        },
+
+        SET_LOCAL_STORAGE: (state) => {
+            const cartData = JSON.parse(localStorage.getItem("cart"))
+
+            state.selectedItems = cartData.selectedItems
+            state.total = cartData.total
+            state.totalDiscount = cartData.totalDiscount
+            state.checkout = cartData.checkout
+            state.itemsCounter = cartData.itemsCounter
+            state.payable = cartData.payable
+            state.selectedItems = cartData.selectedItems
         }
     }
 })
 
 export default cartSlice.reducer;
-export const { ADD_ITEMS, INCREMENT, CHECKOUT, CLEAR, DECREMENT, REMOVE_ITEM } = cartSlice.actions;
+export const { ADD_ITEMS, INCREMENT, CHECKOUT, CLEAR, DECREMENT, REMOVE_ITEM, SET_LOCAL_STORAGE } = cartSlice.actions;

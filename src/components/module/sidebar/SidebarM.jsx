@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 //Style
 import styles from "./SidebarM.module.scss";
@@ -11,10 +11,19 @@ import styles from "./SidebarM.module.scss";
 import { icons } from "@/constants/icons";
 import { usePathname } from "next/navigation";
 
+//Action
+import { SET_LOCAL_STORAGE } from "@/redux/features/cart/cartSlice";
+
 const SidebarM = () => {
 
     const store = useSelector(s => s.cart);
+    const dispatch = useDispatch();
     const pathname = usePathname()
+
+    useEffect(() => {
+        dispatch(SET_LOCAL_STORAGE())
+        console.log(pathname)
+    },[pathname])
 
     return (
         <div

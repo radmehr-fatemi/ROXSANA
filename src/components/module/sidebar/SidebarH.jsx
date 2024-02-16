@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSelector } from "react-redux";
 
 //Style
 import styles from "./SidebarH.module.scss";
@@ -13,13 +14,22 @@ import { icons } from "@/constants/icons";
 //Component
 import HamburgerMenu from "@/module/hamburgerMenu/HamburgerMenu";
 
+//Custom
+import useLocalStorage from "@/components/custom/useLocalStorage";
+
 const SidebarH = () => {
 
     const [clicked, setClicked] = useState(false);
+    const store = useSelector(s => s.cart);
+    const [cartData, setCartData] = useLocalStorage("cart", store);
 
     const clickHandler = () => {
         setClicked(!clicked)
     }
+
+    useEffect(() => {
+        setCartData(store)
+    },[store])
 
     return (
         <div className={styles.container} >

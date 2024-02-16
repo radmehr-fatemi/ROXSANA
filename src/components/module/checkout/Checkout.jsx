@@ -3,7 +3,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { discountCounter, findItem } from "@/utils/functions";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 //Icon

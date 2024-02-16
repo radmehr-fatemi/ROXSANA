@@ -50,22 +50,25 @@
     position: absolute;
     top: -.6rem;
     right: -1.2rem;
-    border-radius: 10%;
-    border-bottom-left-radius: 50%;
-    border-top-right-radius: 50%;
     background-color: $red;
     color: #fff;
-    min-width: 26px;
     font-size: 1rem;
-    text-align: center;
-    padding-top: .2rem;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    padding-top: .3rem;
     animation: Show .8s;
 }
 
 //------------Animation------------
 @keyframes Show1 {
     0% {
-        transform: translateY(100%);
+        transform: translateY(-100% ,100%);
+        opacity: 0;
     }
 }
 
