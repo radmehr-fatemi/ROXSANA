@@ -3,7 +3,7 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
 //function
-import { totalCounter } from "@/utils/functions";
+import { setLocalStorage, totalCounter } from "@/utils/functions";
 
 const initialState = {
     selectedItems: [],
@@ -39,6 +39,7 @@ const cartSlice = createSlice({
             state.total = totalCounter(state.selectedItems).total
             state.totalDiscount = totalCounter(state.selectedItems).totalDiscount
             state.payable = totalCounter(state.selectedItems).payable
+            setLocalStorage("cart" ,state)
         },
 
         INCREMENT: (state, action) => {
@@ -53,6 +54,7 @@ const cartSlice = createSlice({
                 state.totalDiscount = totalCounter(state.selectedItems).totalDiscount
                 state.payable = totalCounter(state.selectedItems).payable
             }
+            setLocalStorage("cart" ,state)
         },
 
         DECREMENT: (state, action) => {
@@ -67,6 +69,7 @@ const cartSlice = createSlice({
                 state.totalDiscount = totalCounter(state.selectedItems).totalDiscount
                 state.payable = totalCounter(state.selectedItems).payable
             }
+            setLocalStorage("cart" ,state)
         },
 
         REMOVE_ITEM: (state, action) => {
@@ -79,6 +82,7 @@ const cartSlice = createSlice({
             state.total = totalCounter(state.selectedItems).total
             state.totalDiscount = totalCounter(state.selectedItems).totalDiscount
             state.payable = totalCounter(state.selectedItems).payable
+            setLocalStorage("cart" ,state)
         },
 
         CLEAR: (state) => {
@@ -88,6 +92,7 @@ const cartSlice = createSlice({
             state.selectedItems = []
             state.total = 0
             state.totalDiscount = 0
+            setLocalStorage("cart" ,state)
         },
 
         CHECKOUT: (state) => {
@@ -97,11 +102,13 @@ const cartSlice = createSlice({
             state.selectedItems = []
             state.total = 0
             state.totalDiscount = 0
+            setLocalStorage("cart" ,state)
         },
 
         SET_LOCAL_STORAGE: (state) => {
             const cartData = JSON.parse(localStorage.getItem("cart"))
-
+            
+            if ( !cartData ) return
             state.selectedItems = cartData.selectedItems
             state.total = cartData.total
             state.totalDiscount = cartData.totalDiscount

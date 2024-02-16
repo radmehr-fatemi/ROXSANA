@@ -16,13 +16,12 @@ import { SET_LOCAL_STORAGE } from "@/redux/features/cart/cartSlice";
 
 const SidebarM = () => {
 
-    const store = useSelector(s => s?.cart);
+    const store = useSelector(store => store?.cart);
     const dispatch = useDispatch();
     const pathname = usePathname()
 
     useEffect(() => {
         dispatch(SET_LOCAL_STORAGE())
-        console.log(pathname)
     },[pathname])
 
     return (

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const CartIcon = ({ styles }) => {
 
-    const store = useSelector(s => s.cart);
+    const store = useSelector(store => store.cart);
 
     return (
         <Link

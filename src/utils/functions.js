@@ -42,18 +42,20 @@ export const filterFetch = (data = [], dig1, dig2) => {
     return slicer
 }
 
-// export const setLocalStorage = (key, initial) => {
-    // if ( !key || !initial ) return
-    
-    // let value;
-    
-    // if (!window.localStorage.getItem(key)) {
-    //     value = initial
-    // } else {
-    //     value = JSON.parse(window.localStorage.getItem(key));
-    // }
-    
-    // window.localStorage.setItem(key, JSON.stringify(initial));
+export const setLocalStorage = (key, initial) => {
+    let result;
 
-    // return  JSON.parse(localStorage.getItem(key))
-// }
+    if ( !key || !initial ) return
+    
+    const storage = localStorage.getItem(key);    
+
+    if ( !storage ) {
+        result = initial
+    } else {
+        result = JSON.parse(storage)
+    }
+
+    localStorage.setItem(key ,JSON.stringify(initial))
+
+    return [result]
+}

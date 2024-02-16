@@ -20,7 +20,7 @@ import { BallTriangle } from "react-loader-spinner";
 const CartPage = () => {
 
     const dispatch = useDispatch()
-    const store = useSelector(s => s.cart);
+    const store = useSelector(store => store.cart);
 
     const checkoutHandler = () => {
         dispatch(CHECKOUT())

@@ -15,7 +15,7 @@ const Searcher = ({ styles }) => {
     const query = useSearchParams().get("q");
     
     useEffect(() => {
-        if (!input?.length) setInput(query)
+        if (!input?.length) setInput(query | "")
         setClicked(!clicked)
     }, [query])
 
