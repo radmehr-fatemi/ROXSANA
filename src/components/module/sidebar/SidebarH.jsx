@@ -15,12 +15,12 @@ import { icons } from "@/constants/icons";
 import HamburgerMenu from "@/module/hamburgerMenu/HamburgerMenu";
 
 //Custom
-import UseLocalStorage from "@/components/custom/UseLocalStorage";
+import UseLocalStorage from "@/components/custom/useLocalStorage";
 
 const SidebarH = () => {
 
     const [clicked, setClicked] = useState(false);
-    const store = useSelector(s => s.cart);
+    const store = useSelector(s => s?.cart);
     const [cartData, setCartData] = UseLocalStorage("cart", store);
 
     const clickHandler = () => {
