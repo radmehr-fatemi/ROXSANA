@@ -34,9 +34,9 @@ const LoginPage = () => {
         const { email ,password } = form;
         const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-        // if ( !password || !email ) return toast.error("Please enter first");
-        // if ( password.length < 6 ) return toast.error("Password needs to be more than 6 ");
-        // if ( !regex.test(email) ) return toast.error("Email is invalid");
+        if ( !password || !email ) return toast.error("Please enter first");
+        if ( password.length < 6 ) return toast.error("Password needs to be more than 6 ");
+        if ( !regex.test(email) ) return toast.error("Email is invalid");
         
         setLoading(true)
 

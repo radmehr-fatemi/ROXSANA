@@ -15,13 +15,15 @@ import { icons } from "@/constants/icons";
 import styles from "./LayoutCart.module.scss";
 import Link from "next/link";
 
-const LayoutCart = ({ children }) => {
+const LayoutCart = ({ children ,session }) => {
 
     const dispatch = useDispatch();
     const router = useRouter();
     const store = useSelector(store => store.cart);
 
     const checkoutHandler = () => {
+        if ( !session ) return router.push("/login")
+        
         dispatch(CHECKOUT())
         toast.success("payment was successfully")
     }

@@ -3,6 +3,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 //Icon
 import { icons } from "@/constants/icons";
@@ -17,12 +18,15 @@ import { CHECKOUT } from "@/redux/features/cart/cartSlice";
 import CardCart from "@/module/card-cart/CardCart";
 import { BallTriangle } from "react-loader-spinner";
 
-const CartPage = () => {
+const CartPage = ({session}) => {
 
     const dispatch = useDispatch()
     const store = useSelector(store => store.cart);
+    const router = useRouter()
 
     const checkoutHandler = () => {
+        if ( !session ) return router.push("/login");
+
         dispatch(CHECKOUT())
         toast.success("payment was successfully")
     }
