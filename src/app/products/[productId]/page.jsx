@@ -22,8 +22,8 @@ const Details = async ({ params: { productId } }) => {
 export default Details;
 
 export const generateStaticParams = async () => {
-    const productsData = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products`);
-    const data = productsData.data.products.splice(0 ,10)
+    const productsData = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/products`).then(res => res.data.products);
+    const data = productsData.splice(0 ,10)
     
     const paths = data.map(i => { productId: String(i.id) })
     return paths
