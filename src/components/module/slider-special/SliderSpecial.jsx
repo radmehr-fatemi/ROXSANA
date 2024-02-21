@@ -19,8 +19,8 @@ import { filterFetch } from "@/utils/functions";
 
 export default function SliderSpecial({ productsData }) {
 
-    const { data ,isLoading }  = useSWR(`${process.env.NEXT_PUBLIC_BASE_URL}/products`, (url) => axios.get(url).then(res => res.data))
-    const newData = filterFetch(data?.products ,1);
+    const { data, isLoading, error } = useSWR(`${process.env.NEXT_PUBLIC_BASE_URL}/products`, (url) => axios.get(url).then(res => res.data))
+    const newData = filterFetch(data?.products, 1);
 
     return (
         <div
@@ -60,18 +60,21 @@ export default function SliderSpecial({ productsData }) {
             >
 
                 {
-                    isLoading ? (
-                        <div className=' h-56 pb-20' >
-                            <SmallSpinner />
-                        </div>
-                    ) :
-                        newData.map((i, index) => (
-                            <SwiperSlide
-                                style={{ animation: `fadeInRight .4s .${index + 2}s` }}
-                                key={i.id}>
-                                <CardHome data={i} index={index} />
-                            </SwiperSlide>
-                        ))
+                    error ?
+                        <SmallSpinner error={"Check your connection"} /> :
+
+                        isLoading ? (
+                            <div className=' h-56 pb-20' >
+                                <SmallSpinner />
+                            </div>
+                        ) :
+                            newData.map((i, index) => (
+                                <SwiperSlide
+                                    style={{ animation: `fadeInRight .4s .${index + 2}s` }}
+                                    key={i.id}>
+                                    <CardHome data={i} index={index} />
+                                </SwiperSlide>
+                            ))
                 }
             </Swiper>
             <p

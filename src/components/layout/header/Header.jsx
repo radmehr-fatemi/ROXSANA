@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 //Component
 import SidebarH from "@/module/sidebar/SidebarH";
@@ -9,9 +11,12 @@ import styles from "./Header.module.scss";
 
 //Icon
 import { icons } from "@/constants/icons";
-import CartIcon from "@/components/element/cart/CartIcon";
+import CartIcon from "@/element/cart/CartIcon";
 
-const Header = () => {
+const Header = async () => {
+
+    const session = await getServerSession(authOptions);
+
     return (
         <div
             className={styles.container}
@@ -44,13 +49,24 @@ const Header = () => {
 
                     </div>
                     <div className={styles.field2_f1_right}>
-                        <Link
-                            style={{ animation: "zoomIn .4s .2s" }}
-                            href="/auth/login">
-                            {icons.user}
-                            Login
-                        </Link>
-                        
+                        {
+                            session ? (
+                                <Link
+                                    style={{ animation: "zoomIn .4s .2s" }}
+                                    href="/dashboard">
+                                    {icons.user}
+                                    Account
+                                </Link>
+                            ) : (
+                                <Link
+                                    style={{ animation: "zoomIn .4s .2s" }}
+                                    href="/auth/login">
+                                    {icons.user}
+                                    Login
+                                </Link>
+                            )
+                        }
+
                         <CartIcon styles={styles} />
 
                     </div>

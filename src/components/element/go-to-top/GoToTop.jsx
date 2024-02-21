@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 //Style
 import styles from "./GoToTop.module.scss";
+import { Toaster } from "react-hot-toast";
 
 const GoToTop = () => {
 
@@ -18,6 +19,7 @@ const GoToTop = () => {
         >
             {icons.arrowTop}
             Go to top
+            <Toaster />
         </motion.button>
     );
 };

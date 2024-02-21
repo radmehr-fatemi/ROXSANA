@@ -83,7 +83,7 @@
 }
 
 .field2_f1_right {
-    width: 140px;
+    width: 160px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,9 +95,11 @@
         align-items: center;
         font-size: 1.4rem;
         margin-left: 1.2rem;
-
+        
         &:hover {
-            font-size: 1.5rem;
+         svg {
+             font-size: 1.9rem;
+         }  
         }
     }
 
@@ -106,8 +108,8 @@
 
         span {
             position: absolute;
-            top: -.8rem;
-            right: -.4rem;
+            top: -.6rem;
+            right: -.3rem;
             background-color: $red;
             color: #fff;
             border-radius: 50px;

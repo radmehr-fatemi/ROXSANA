@@ -13,16 +13,16 @@ const Searcher = ({ styles }) => {
     const [clicked, setClicked] = useState(false);
     const router = useRouter();
     const query = useSearchParams().get("q");
-    
+
     useEffect(() => {
-        if (!input?.length) setInput(query | "")
+        if (!input?.length && query) setInput(query)
         setClicked(!clicked)
     }, [query])
 
     const changHandler = ({ target }) => {
         setInput(target.value)
     }
-    
+
     const submitHandler = (e) => {
         e.preventDefault();
 
@@ -52,7 +52,6 @@ const Searcher = ({ styles }) => {
                     placeholder="search..."
                 />
             </form>
-            <Toaster />
         </>
     )
 };
