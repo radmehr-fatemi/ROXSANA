@@ -4,6 +4,7 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 //Style
 import styles from "./RegisterPage.module.scss";
@@ -54,7 +55,12 @@ const RegisterPage = () => {
 
         if (data.massage) {
             toast.success(data.massage)
-            setTimeout(() => router.replace("/"), 400)
+            await signIn("credentials", {
+                email,
+                password,
+                redirect: false
+            })
+            setTimeout(() => router.replace("/"), 200)
         }
 
         if (data.error) return toast.error(data.error);

@@ -31,12 +31,10 @@ export const POST = async (req) => {
             { status: 422 }
         )
 
-        console.log("Hear----------------------------", existingUser)
-
         const hashPassword = await hashedPassword(password);
 
         const newUser = await UserR.create({ email, password: hashPassword });
-
+        
         return NextResponse.json(
             {
                 massage: "User created",
