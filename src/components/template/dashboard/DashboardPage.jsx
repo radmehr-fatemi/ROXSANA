@@ -13,7 +13,7 @@ const DashboardPage = ({ userData }) => {
     const { email, createdAt } = userData;
 
     const logoutHandler = async () => {
-        signOut()
+        await signOut()
     }
 
     return (
