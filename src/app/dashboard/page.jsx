@@ -17,9 +17,10 @@ const Dashboard = async () => {
 
     const session = await getServerSession(authOptions);
 
+    if (!session) redirect("/login")
+    
     const user = await UserR.findOne({ email: session.user.email });
 
-    if (!session) redirect("/login")
 
     return <DashboardPage userData={JSON.parse(JSON.stringify(user))} />
 };
