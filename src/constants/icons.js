@@ -18,6 +18,7 @@ import { RxCross2 } from "react-icons/rx";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
+import { BiLogOut } from "react-icons/bi";
 
 export const icons = {
     search: <RiSearch2Line />,
@@ -39,4 +40,5 @@ export const icons = {
     back: <RiArrowGoBackLine />,
     trash: <RiDeleteBinLine />,
     arrowRight: <IoIosArrowForward />,
+    logout: <BiLogOut />,
 };

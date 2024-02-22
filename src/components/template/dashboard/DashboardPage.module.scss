@@ -1,0 +1,121 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    @include md;
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+    @include md {
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-around;
+        padding-top: 4rem;
+    }
+}
+
+.field1 {
+    background: linear-gradient(to right top ,rgb(0, 247, 255) ,blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 50%;
+    width: fit-content;
+    max-width: 100%;
+    text-shadow: 0 0 4px #58587c;
+    overflow: hidden;
+
+    svg {
+        font-size: 4rem;
+        filter: drop-shadow(0 0 12px rgb(48, 211, 252));
+    }
+
+    h1 {
+        font-size: 1.1rem;
+        padding: .4rem 0;
+    }
+}
+
+.field2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 0;
+
+    @include md {
+        width: fit-content;
+        align-items: start;
+        padding: 2rem 0;
+    }
+
+    p {
+        display: flex;
+        align-items: center;
+        background-color: rgb(0, 186, 0);
+        padding: .2rem .4rem 0 .4rem;
+        border-radius: 6px;
+        margin: 1rem 0;
+        
+
+        span {
+            margin-left: .6rem;
+        }
+    }
+
+    button {
+        background-color: red;
+        display: flex;
+        padding: .2rem .4rem 0 .4rem;
+        border-radius: 6px;
+
+        svg {
+            margin-right: .2rem;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #009BFF;
+    border-radius: 5px;
+    padding: 2rem;
+
+    p {
+        padding: 1rem 0;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        background-color: #009BFF;
+        color: #fff;
+        border-radius: 6px;
+        padding: .2rem .4rem 0 .4rem;
+
+        svg {
+            font-size: 1.1rem;
+        }
+
+        &:hover {
+            background-color: #1ea5ff;
+        }
+    }
+}

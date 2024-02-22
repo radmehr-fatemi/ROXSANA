@@ -17,9 +17,9 @@ export default function Banner() {
 
     return (
         <div
-            style={{ animation: "zoomInDown .6s" }}
-            className='banner_container'>
+        className='banner_container'>
             <Swiper
+                style={{ animation: "fadeInDown .8s" }}
                 spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
