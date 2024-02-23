@@ -23,7 +23,7 @@
     img {
         border-radius: 50%;
         box-shadow: 0 0 2px 8px #f0fcff, 0 0 4px 8px #0681b1;
-        animation: Show2 1.4s ;
+        animation: Show2 1.4s;
     }
 
     h2 {
@@ -36,6 +36,8 @@
 }
 
 .field2 {
+    overflow: hidden;
+
     h4 {
         font-size: 1.2rem;
         animation: Show3 .8s 1.4s;
@@ -114,17 +116,20 @@
         opacity: 0;
     }
 }
+
 @keyframes Show4 {
     0% {
         transform: scale(0);
     }
 }
+
 @keyframes Show5 {
     0% {
         transform: translateY(100%);
         opacity: 0;
     }
 }
+
 @keyframes Show6 {
     0% {
         opacity: 0;

@@ -81,7 +81,7 @@ const Header = async () => {
                     ><Link href="/products/categories" > Categories </Link></li>
                     <li
                         style={{ animation: "zoomIn .4s .8s" }}
-                    ><Link href="/dashboard" > About us </Link></li>
+                    ><Link href="/about-us" > About us </Link></li>
                 </ul>
             </div>
         </div>

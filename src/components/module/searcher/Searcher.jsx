@@ -42,7 +42,9 @@ const Searcher = ({ styles }) => {
                 <span
                     style={clicked ? { animation: "bounceInDown 1s" } : { animation: "bounceInUp 1s" }}
                 >
-                    {icons.search}
+                    <span
+                        onClick={submitHandler}
+                    >{icons.search}</span>
                 </span>
 
                 <input

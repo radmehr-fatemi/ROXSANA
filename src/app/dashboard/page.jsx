@@ -7,6 +7,11 @@ import connectDB from "@/utils/connectDB";
 //Component
 import DashboardPage from "@/components/template/dashboard/DashboardPage";
 
+//Metadata
+export const metadata = {
+    title: 'ROXSANA dashboard | Radmehr',
+  }
+
 const Dashboard = async () => {
 
     try {

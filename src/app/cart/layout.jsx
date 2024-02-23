@@ -15,3 +15,8 @@ const Layout = async ({ children ,props }) => {
 };
 
 export default Layout;
+
+//MetaData
+export const metaData = {
+    title:"Shopping cart",
+}

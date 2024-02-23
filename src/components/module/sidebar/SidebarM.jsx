@@ -54,7 +54,7 @@ const SidebarM = () => {
                 ><Link href="/products/categories" > {icons.category} </Link></li>
 
                 <li
-                    className={pathname === "/about-us" ? styles.selected : styles.null}
+                    className={pathname === "/dashboard" ? styles.selected : styles.null}
                     style={{ animation: "bounceInUp .3s .7s" }}
                 ><Link href="/dashboard" > {icons.user} </Link></li>
 

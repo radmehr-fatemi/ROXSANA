@@ -10,3 +10,12 @@ const Search = async ({searchParams:{ q }}) => {
 };
 
 export default Search;
+
+//MetaData
+export const generateMetadata = async ({searchParams:{ q }}) => {
+
+    return {
+        title:`Searched for ${q}`,
+        description:`Result of searched products for ${q}`,
+    }
+}
