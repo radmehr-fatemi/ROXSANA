@@ -12,18 +12,21 @@ import BannerFlex2 from "@/module/banner-flex-2/BannerFlex2";
 //function
 import { filterFetch } from "@/utils/functions";
 
-const HomePage = ({ productsData, categoriesData }) => {
+const HomePage = (props) => {
+
+    const { productsData, categoriesData ,smartphonesData ,mensShirtsData ,womensDressesData ,laptopsData } = props
+
     return (
         <div className={ styles.container } >
            <SliderCircle categoriesData={categoriesData} />
             <Banner />
-            <SliderSpecial productsData={filterFetch(productsData ,1 )} />
-            <SliderMain data={productsData}> New products </SliderMain>
-            <SliderMain data={productsData}> Smartphones </SliderMain>
+            <SliderSpecial productsData={productsData} />
+            <SliderMain data={filterFetch(productsData ,9 )}> New products </SliderMain>
+            <SliderMain data={smartphonesData}> Smartphones </SliderMain>
             <BannerFlex />
-            <SliderMain data={productsData}> Men`s shirts </SliderMain>
-            <SliderMain data={productsData}> Women`s dresses </SliderMain>
-            <SliderMain data={productsData}> Laptops </SliderMain>
+            <SliderMain data={mensShirtsData}> Men`s shirts </SliderMain>
+            <SliderMain data={womensDressesData}> Women`s dresses </SliderMain>
+            <SliderMain data={laptopsData}> Laptops </SliderMain>
             <BannerFlex2 />
         </div>
     );

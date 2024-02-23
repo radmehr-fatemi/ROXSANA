@@ -20,7 +20,7 @@ import { filterFetch } from "@/utils/functions";
 export default function SliderSpecial({ productsData }) {
 
     const { data, isLoading, error } = useSWR(`${process.env.NEXT_PUBLIC_BASE_URL}/products`, (url) => axios.get(url).then(res => res.data))
-    const newData = filterFetch(data?.products, 1);
+    const newData = filterFetch(data?.products, 4);
 
     return (
         <div
