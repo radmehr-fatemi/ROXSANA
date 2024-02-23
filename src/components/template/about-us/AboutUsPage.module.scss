@@ -1,0 +1,132 @@
+@import "../../../../public/style/color.scss";
+@import "../../../../public/style/res.scss";
+
+.container {
+    @include md;
+    padding: 1rem;
+    color: $blue;
+    animation: Show6 .6s;
+}
+
+.flex {
+    @include md {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+.field1 {
+    padding: 1rem;
+    overflow: hidden;
+
+    img {
+        border-radius: 50%;
+        box-shadow: 0 0 2px 8px #f0fcff, 0 0 4px 8px #0681b1;
+        animation: Show2 1.4s ;
+    }
+
+    h2 {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.4rem;
+        transform: translateX(-100%);
+        animation: Show1 1s 1s forwards;
+    }
+}
+
+.field2 {
+    h4 {
+        font-size: 1.2rem;
+        animation: Show3 .8s 1.4s;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        background-color: $blue;
+        color: #fff;
+        margin: .2rem;
+        border-radius: .2rem;
+        padding: .1rem .4rem;
+        animation: Show4 .8s 2s;
+    }
+}
+
+.field3 {
+    padding: 1rem;
+    margin: 1rem auto;
+    text-align: center;
+    border-radius: .2rem;
+    border: 2px solid $blue;
+
+    @include md {
+        width: 50%;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        padding: .2rem 0;
+        font-weight: 600;
+        animation: Show5 .6s 2.2s forwards;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    svg {
+        font-size: 1.8rem;
+        color: $blue;
+        cursor: pointer;
+        animation: Show4 .8s 2.4s;
+    }
+}
+
+//------Animation--------------
+@keyframes Show1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes Show2 {
+    0% {
+        transform: scale(0);
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes Show3 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+@keyframes Show4 {
+    0% {
+        transform: scale(0);
+    }
+}
+@keyframes Show5 {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+@keyframes Show6 {
+    0% {
+        opacity: 0;
+    }
+}

@@ -20,6 +20,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
 import { BsFeather } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa6";
 
 export const icons = {
     search: <RiSearch2Line />,
@@ -43,4 +44,5 @@ export const icons = {
     arrowRight: <IoIosArrowForward />,
     logout: <BiLogOut />,
     aboutUs: <BsFeather />,
+    github: <FaGithub />,
 };
