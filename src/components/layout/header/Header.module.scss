@@ -140,6 +140,7 @@
     a {
         display: flex;
         width: 80px;
+        border-radius: .2rem;
 
         &:nth-child(1) {
             svg {
@@ -148,7 +149,7 @@
         }
 
         &:hover {
-            font-size: 1.1rem;
+            transform: scale(1.1);
         }
     }
 }
