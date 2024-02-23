@@ -23,8 +23,8 @@ const Footer = () => {
             <div className={styles.field2}>
                 <h4> Join us on social networks </h4>
                 <div>
-                    <a href="https://github.com/radmehr-fatemi"> {icons.instagram} </a>
-                    <a href="https://github.com/radmehr-fatemi"> {icons.telegram} </a>
+                    <a href="https://www.instagram.com/radmehrfatemi81"> {icons.instagram} </a>
+                    <a href="https://t.me/radmehr81"> {icons.telegram} </a>
                 </div>
             </div>
             <div className={styles.field3}>
