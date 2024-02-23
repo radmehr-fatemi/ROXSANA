@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 
 //Component
-import LayoutCart from "@/components/module/layout-cart/LayoutCart";
+import LayoutCart from "@/module/layout-cart/LayoutCart";
 const Layout = async ({ children ,props }) => {
 
     const session = await getServerSession(authOptions)

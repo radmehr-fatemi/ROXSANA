@@ -3,7 +3,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
-import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import { notificationContext } from "@/components/module/notification/Notification";
 
 //Icon
 import { icons } from "@/constants/icons";
@@ -11,40 +12,46 @@ import { icons } from "@/constants/icons";
 //Style
 import styles from "./CartPage.module.scss";
 
-//Action
-import { CHECKOUT } from "@/redux/features/cart/cartSlice";
-
 //Component
 import CardCart from "@/module/card-cart/CardCart";
 import { BallTriangle } from "react-loader-spinner";
 
-const CartPage = ({session}) => {
+const CartPage = ({ session }) => {
 
     const dispatch = useDispatch()
     const store = useSelector(store => store.cart);
-    const router = useRouter()
+    const notification = useContext(notificationContext)
 
     const checkoutHandler = () => {
-        if ( !session ) return router.push("/login");
 
-        dispatch(CHECKOUT())
-        toast.success("payment was successfully")
+        if (!session) return notification({
+            model:"router",
+            title:"First you need to login",
+            buttonOk:"Let`s login"
+        });
+        
+        notification({
+            model: "checkout",
+            title: "Sure you`re ready to checkout ?",
+            buttonCancel: "Cancel",
+            buttonOk: "Yes",
+        })
     }
 
     return (
         <div className={styles.container}>
-            <div className={styles.cards}>
-                {
-                    !!store.itemsCounter < 1 ? (
-                        <EmptyCart />
-                    ) : (
+                <div className={styles.cards}>
+                    {
+                        !!store.itemsCounter < 1 ? (
+                            <EmptyCart />
+                        ) : (
 
-                        store.selectedItems.map(i => (
-                            <CardCart key={i.id} data={i} dispatch={dispatch} />
-                        ))
-                    )
-                }
-            </div>
+                            store.selectedItems.map(i => (
+                                <CardCart key={i.id} data={i} dispatch={dispatch} />
+                            ))
+                        )
+                    }
+                </div>
 
             <div
                 style={{ animation: "fadeInUp .6s" }}

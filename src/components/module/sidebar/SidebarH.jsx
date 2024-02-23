@@ -30,22 +30,25 @@ const SidebarH = () => {
                 {
                     clicked &&
                     <motion.ul
-                        animate={{ x: 10, y: 10, opacity: 1 }}
                         className={styles.list}
+                        animate={{ x: 10, y: 10, opacity: 1 }}
                         exit={{ x: -10, opacity: 0, y: -10 }}
                         transition={{
                             duration: .1
                         }}
                     >
-                            <li
-                                onClick={clickHandler}
-                            ><Link href="/" > {icons.home} Home </Link></li>
-                            <li
-                                onClick={clickHandler}
-                            ><Link href="/products/categories" > {icons.category} Categories </Link></li>
-                            <li
-                                onClick={clickHandler}
-                            ><Link href="/dashboard" > {icons.user} Account </Link></li>
+                        <li
+                            onClick={clickHandler}
+                        ><Link href="/" > {icons.home} Home </Link></li>
+                        <li
+                            onClick={clickHandler}
+                        ><Link href="/products/categories" > {icons.category} Categories </Link></li>
+                        <li
+                            onClick={clickHandler}
+                        ><Link href="/dashboard" > {icons.user} Account </Link></li>
+                        <li
+                            onClick={clickHandler}
+                        ><Link href="/about-us" > {icons.aboutUs} About us </Link></li>
 
                     </motion.ul>
                 }

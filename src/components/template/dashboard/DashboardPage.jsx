@@ -4,6 +4,10 @@ import { icons } from "@/constants/icons";
 import { signOut } from "next-auth/react";
 import { ClimbingBoxLoader } from "react-spinners";
 import Link from "next/link";
+import { useContext } from "react";
+
+//Context
+import { notificationContext } from "@/module/notification/Notification";
 
 //Style
 import styles from "./DashboardPage.module.scss";
@@ -11,9 +15,13 @@ import styles from "./DashboardPage.module.scss";
 const DashboardPage = ({ userData }) => {
 
     const { email, createdAt } = userData;
+    const notification = useContext(notificationContext)
 
     const logoutHandler = async () => {
-        await signOut()
+        notification({
+            model:"logout",
+            title:"Are you sure to logout ?"
+        })
     }
 
     return (
@@ -36,7 +44,7 @@ const DashboardPage = ({ userData }) => {
                     <p
                         style={{ animation: "zoomIn .8s .6s" }}
                     >
-                        Registery data :
+                        Registery date :
                         <span> {new Date(createdAt).toLocaleDateString("en-us")} </span>
                     </p>
 

@@ -4,28 +4,36 @@ import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
-
-//Action
-import { CHECKOUT } from "@/redux/features/cart/cartSlice";
+import Link from "next/link";
+import { useContext } from "react";
+import { notificationContext } from "../notification/Notification";
 
 //Icon
 import { icons } from "@/constants/icons";
 
 //Style
 import styles from "./LayoutCart.module.scss";
-import Link from "next/link";
 
-const LayoutCart = ({ children ,session }) => {
+const LayoutCart = ({ children, session }) => {
 
-    const dispatch = useDispatch();
     const router = useRouter();
     const store = useSelector(store => store.cart);
+    const notification = useContext(notificationContext)
 
     const checkoutHandler = () => {
-        if ( !session ) return router.push("/login")
-        
-        dispatch(CHECKOUT())
-        toast.success("payment was successfully")
+
+        if (!session) return notification({
+            model: "router",
+            title: "First you need to login",
+            buttonOk: "Let`s login"
+        });
+
+        notification({
+            model: "checkout",
+            title: "Sure you`re ready to checkout ?",
+            buttonCancel: "Cancel",
+            buttonOk: "Yes",
+        })
     }
     return (
         <div className={styles.container}>

@@ -1,0 +1,75 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    animation: Show1 .3s forwards;
+}
+
+.notification {
+    min-width: 300px;
+    max-width: 90%;
+    text-align: center;
+    background: linear-gradient(to right top, rgba(0, 98, 101, 0.776), rgba(6, 201, 255, 0.708) ,rgb(0, 102, 255));
+    backdrop-filter: blur(1px);
+    color: #fff;
+    text-shadow: 0 0 4px #333;
+    border-radius: 10px;
+    padding: 1rem;
+    overflow: hidden;
+    
+    p {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        padding: .4rem 0;
+        animation: Show2 .3s .1s;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    button {
+        width: 120px;
+        border-radius: 6px;
+        font-size: 1.1rem;
+    }
+    
+    .buttonOk {
+        background-color: blue;
+        animation: Show3 .3s .4s;
+    }
+
+    .buttonCancel {
+        background-color: red;
+        animation: Show4 .3s .4s;
+    }
+}
+//-------Animation-----------
+@keyframes Show1 {
+    0% {
+        opacity: 0;
+    }
+}
+@keyframes Show2 {
+    0% {
+        transform: scale(.1);
+    }
+}
+@keyframes Show3 {
+    0% {
+        transform: translateX(-100%);
+    }
+}
+@keyframes Show4 {
+    0% {
+        transform: translateX(100%);
+    }
+}

@@ -1,3 +1,6 @@
+//Component
+import Navigation from "@/components/module/notification/Notification";
+
 export const shortHandler = (text, dig) => {
     const splited = text.split("");
     const slicer = splited.slice(0, dig)
@@ -45,17 +48,17 @@ export const filterFetch = (data = [], dig1, dig2) => {
 export const setLocalStorage = (key, initial) => {
     let result;
 
-    if ( !key || !initial ) return
-    
-    const storage = localStorage.getItem(key);    
+    if (!key || !initial) return
 
-    if ( !storage ) {
+    const storage = localStorage.getItem(key);
+
+    if (!storage) {
         result = initial
     } else {
         result = JSON.parse(storage)
     }
 
-    localStorage.setItem(key ,JSON.stringify(initial))
+    localStorage.setItem(key, JSON.stringify(initial))
 
     return [result]
 }

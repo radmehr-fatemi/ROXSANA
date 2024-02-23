@@ -7,6 +7,7 @@ import "animate.css";
 //Component
 import Layout from '@/layout/Layout';
 import ReduxProvider from '@/provider/ReduxProvider';
+import NotificationContext from '@/module/notification/Notification';
 
 //Metadata
 export const metadata = {
@@ -19,7 +20,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={yekan.className}>
         <ReduxProvider>
-          <Layout> {children} </Layout>
+          <NotificationContext>
+            <Layout> {children} </Layout>
+          </NotificationContext>
         </ReduxProvider>
       </body>
     </html>
